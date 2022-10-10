@@ -11,6 +11,8 @@ class Database
     
     public function __construct()
     {
+        echo "Database __construct() | ";
+
         $this->host = HOST;
         $this->db = DB;
         $this->user = USER;
@@ -20,6 +22,8 @@ class Database
 
     function connect()  //se ejecuta en el member o sport model
     {
+        echo "Database connect() | ";
+
         try {
             $connection = "mysql:host=" . HOST . ";"
                 . "dbname=" . DB . ";"
