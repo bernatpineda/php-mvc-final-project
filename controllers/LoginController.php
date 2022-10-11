@@ -11,7 +11,7 @@ class LoginController {
         $this->view = new View();
         $this->model = $this->loadModel(substr(__CLASS__,0,-10));
 
-        $action = "getLoginData"; // cuando capturemos este valor por Query Param, declararemos esta propiedad vacía y la setearemos en el siguiente condicional
+        $action = "validLogin"; // cuando capturemos este valor por Query Param, declararemos esta propiedad vacía y la setearemos en el siguiente condicional
             // // if (isset($_REQUEST["action"])) {
             // //     $action = $_REQUEST["action"]; // ej: = getAllPlayers
             // // }
@@ -36,22 +36,38 @@ class LoginController {
         }
     }
 
-    function getLoginData() {
-        echo " getLoginData() | ";
-    
-        $loginData = $this->model->get(); // get(): returns the array with the DB data
-        echo 'loginData = ';
-        echo "<pre>";
-        print_r($loginData);
-        echo "</pre>";
-    
-        if (isset($loginData)) {
+    function validLogin() {  
+        echo " validLogin() | ";
+
+        if (isset($_POST["login"])) {      
+            $emailInput = $_POST["user-email"];
+            $pwdInput = $_POST["user-password"];
+
+            $loginData = $this->model->get($emailInput); // get(): returns the array with the DB data
+
+            echo 'loginData = ';
+            echo "<pre>";
+            print_r($loginData);
+            echo "</pre>";
+        }
+        
+        if (count($loginData) > 0) { // (sizeof($_POST) > 0)
+            echo "count: ".count($loginData). " | " ;
+
+            $pwdHashedInDb = $loginData[0]["password"];
+            $pwdVerify = password_verify($pwdInput, $pwdHashedInDb);
+
+            echo " $pwdHashedInDb | $pwdInput | -> $pwdVerify <- | ";
+
+            if ($pwdVerify) {
+                $this->view->render("main/main");
+                // session_start();
+            }
+
             // assignamos el array de la DB data a la propiedad data de la class View
-            $this->view->data = $loginData; 
-            $this->view->render("login/login");
+            #$this->view->data = $loginData; 
         }
     }
-
 
     // function validSession() {
     //     // return true or false;

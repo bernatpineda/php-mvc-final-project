@@ -10,3 +10,5 @@ require_once "./core/classes/View.php";
 // esto es lo que obtendría de la class Router tras hacer la lógica del Query Param
 require_once "./controllers/LoginController.php";
 $controller = new LoginController();
+
+require_once VIEWS . "login/login" . ".php";
