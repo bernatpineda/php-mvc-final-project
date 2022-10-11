@@ -31,7 +31,9 @@ class LoginModel {
         try {
             $query->execute(); // lanza la petición del prepare a la base de datos
             $loginData = $query->fetchAll(); // si tiene registro, es que será correcto.
+
             // $session email - 
+
             // print_r($loginData);
             return $loginData;
             

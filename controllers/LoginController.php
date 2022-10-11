@@ -63,9 +63,10 @@ class LoginController {
 
             if ($pwdVerify) {
                 $this->view->render("main/main");
-                session_start();
+                $_SESSION['email'] = $emailInput;
+                print_r($_SESSION);
             } else {
-                $this->view->render("error/error");
+                $this->view->render("login/login");
             }
 
             // assignamos el array de la DB data a la propiedad data de la class View
