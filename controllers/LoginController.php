@@ -11,10 +11,12 @@ class LoginController {
         $this->view = new View();
         $this->model = $this->loadModel(substr(__CLASS__,0,-10));
 
-        $action = "validLogin"; // cuando capturemos este valor por Query Param, declararemos esta propiedad vacía y la setearemos en el siguiente condicional
-            // // if (isset($_REQUEST["action"])) {
-            // //     $action = $_REQUEST["action"]; // ej: = getAllPlayers
-            // // }
+        $action = "";
+
+        if (isset($_REQUEST["action"])) {
+            $action = $_REQUEST["action"]; // ej: = validLogin
+        }
+
         // ejecutar el método que haya en el action
         if (method_exists(__CLASS__, $action)) {
             call_user_func([__CLASS__, $action]); //([__CLASS__, $action], $_REQUEST)
@@ -61,7 +63,9 @@ class LoginController {
 
             if ($pwdVerify) {
                 $this->view->render("main/main");
-                // session_start();
+                session_start();
+            } else {
+                $this->view->render("error/error");
             }
 
             // assignamos el array de la DB data a la propiedad data de la class View
