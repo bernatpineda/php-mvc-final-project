@@ -23,16 +23,14 @@ class LoginModel {
         echo " get( $emailInput ) | ";
 
         $query = $this->db->connect()->prepare(
-            "SELECT email, password 
+            "SELECT name, email, password 
             FROM members
             WHERE email = '$emailInput';"
         );
 
         try {
             $query->execute(); // lanza la petición del prepare a la base de datos
-            $loginData = $query->fetchAll(); // si tiene registro, es que será correcto.
-
-            // $session email - 
+            $loginData = $query->fetchAll(); // si tiene algun registro con ese emailInput, es que existirá en la base de datos.
 
             // print_r($loginData);
             return $loginData;

@@ -21,7 +21,7 @@ class LoginController {
         if (method_exists(__CLASS__, $action)) {
             call_user_func([__CLASS__, $action]); //([__CLASS__, $action], $_REQUEST)
         } else {
-            echo " LoginController Error | "; //TODO: require_once VIEWS . "/error/error.php";
+            echo " Controller Error | "; //TODO: require_once VIEWS . "/error/error.php";
         }
     }
 
@@ -53,32 +53,41 @@ class LoginController {
             echo "</pre>";
         }
         
-        if (count($loginData) > 0) { // (sizeof($_POST) > 0)
+        if (count($loginData) > 0) { // (sizeof($loginData) > 0)
             echo "count: ".count($loginData). " | " ;
 
             $pwdHashedInDb = $loginData[0]["password"];
             $pwdVerify = password_verify($pwdInput, $pwdHashedInDb);
 
-            echo " $pwdHashedInDb | $pwdInput | -> $pwdVerify <- | ";
+            echo 'password_verify( '." $pwdHashedInDb, $pwdInput ) -> $pwdVerify <- | ";
 
             if ($pwdVerify) {
-                $this->view->render("main/main");
                 $_SESSION['email'] = $emailInput;
+                $this->view->data = $loginData[0]["name"]; // assignamos el name de la DB data a la propiedad data de la class View
+                $this->view->render("main/main");
+                
+                echo '$_SESSION = ';
                 print_r($_SESSION);
             } else {
-                $this->view->render("login/login");
+                $errorMsg = "Incorrect password";
+                $this->view->render("login/login"); 
+                // require_once VIEWS . "login/login.php?error=2";
+                echo " $errorMsg | ";
             }
 
-            // assignamos el array de la DB data a la propiedad data de la class View
-            #$this->view->data = $loginData; 
+        } else {
+            $errorMsg = "Email not registered";
+            $this->view->render("login/login");
+            // require_once VIEWS . "login/login.php?error=1";
+            echo " $errorMsg | ";
         }
     }
 
     // function validSession() {
-    //     // return true or false;
+    //     if (isset($_SESSION["email"])) {
+    //         return true;
+    //     } else {
+    //         return false;
+    //     }
     // }
 }
-
-
-
-

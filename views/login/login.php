@@ -30,6 +30,24 @@
 
             <input class="w-100 btn btn-lg btn-primary" type="submit" value="Login" name="login" />
 
+            <?php
+                if (isset($_GET["error"])) {
+                    if ($_GET["error"] == "1") {
+                        ?>
+                        <div class="alert alert-danger incorrect-credentials-alert" role="alert">
+                            Email not registered
+                        </div>
+                        <?php
+                    } else if ($_GET["error"] == "2") {
+                        ?>
+                        <div class="alert alert-danger incorrect-credentials-alert" role="alert">
+                            Incorrect password
+                        </div>
+                        <?php
+                    }
+                } 
+            ?>
+
             <p class="mt-5 mb-3 text-muted">&copy; 2022</p>
         </form>
     </main>
