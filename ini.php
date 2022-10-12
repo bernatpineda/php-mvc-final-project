@@ -1,6 +1,9 @@
 <?php
 require_once "config/constants.php";
 require_once "config/db.php";
+
+require_once("core/routes.php");
+
 require_once "core/classes/Database.php";
 require_once "core/classes/Model.php";
 require_once "core/classes/View.php";
