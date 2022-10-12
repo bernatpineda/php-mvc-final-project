@@ -14,19 +14,56 @@ class LoginController
 
     /* ~~~ CONTROLLER METHODS ~~~ */
 
-    function login()
-    {
+    // function login()
+    // {
 
 
-    //     $employees = $this->model->get();
-    //     if (isset($employees)) {
-    //         $this->view->data = $employees;
-    //         $this->view->render("employee/employeeDashboard");
-    //     }
+    // //     $employees = $this->model->get();
+    // //     if (isset($employees)) {
+    // //         $this->view->data = $employees;
+    // //         $this->view->render("employee/employeeDashboard");
+    // //     }
 
-    header("Location:./views/main/main.php");
-    //render
+    // // header("Location:./views/main/main.php");
+
+    // }
+
+    function login() {  
+        echo " validLogin() | ";
+
+        if (isset($_POST["login"])) {      
+            $emailInput = $_POST["user-email"];
+            $pwdInput = $_POST["user-password"];
+
+            $loginData = $this->model->getConnect($emailInput); // get(): returns the array with the DB data
+
+            echo 'loginData = ';
+            echo "<pre>";
+            print_r($loginData);
+            echo "</pre>";
+        }
+        
+        if (count($loginData) > 0) { // (sizeof($_POST) > 0)
+            echo "count: ".count($loginData). " | " ;
+
+            $pwdHashedInDb = $loginData[0]["password"];
+            $pwdVerify = password_verify($pwdInput, $pwdHashedInDb);
+
+            echo " $pwdHashedInDb | $pwdInput | -> $pwdVerify <- | ";
+
+            if ($pwdVerify) {
+                $this->view->render("main/main");
+                session_start();
+            } else {
+                $this->view->render("error/error");
+            }
+
+            // assignamos el array de la DB data a la propiedad data de la class View
+            #$this->view->data = $loginData; 
+        }
     }
+ 
+    // function
 
    
 }

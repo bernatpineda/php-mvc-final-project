@@ -3,23 +3,28 @@
 
 class LoginModel extends Model
 {
+//     session_start();
 
+// $_SESSION['browser'] = $_SERVER['HTTP_USER_AGENT'];
+// $_SESSION['ip'] = $_SERVER['REMOTE_ADDR'];
+// $_SESSION['time'] = time();
+// echo '<pre>';
+// print_r($_SESSION);
 
-    function get()
+    function getConnect()
     {
         $query = $this->db->connect()->prepare("SELECT email, password
         FROM members;");   
         try {
             $query->execute();
-            $loginh = $query->fetchAll();
+            $login = $query->fetchAll();
             print_r($login);
-            return $loginh;
+            return $login;
         } catch (PDOException $e) {
             return [];
         }
     }
 }
-    
 
 //     function getById($id)
 //     {
