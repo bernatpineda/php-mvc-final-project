@@ -4,15 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php echo $data ["titulos"]; ?></title>
+    <title></title>
 </head>
 <body>
-    <h2><?php echo $data ["titulos"]; ?></h2>
+    <h1>Members Dashboard</h1>
     <a href="">Create</a>
     <br /><br />
     <table border="1" width="80%">
         <thead>
             <tr>
+                <th>Id</th>
                 <th>Name users</th>
                 <th>Last name</th>
                 <th>Email</th>
@@ -21,13 +22,14 @@
             </tr>
         </thead>
         <tbody>
-        <?php foreach($data["vehiculo"] as $dato){
+        <?php foreach($gymUser as $member){
             echo "<tr>";
-            echo "<td>" . $dato["name"] . "</td>";
-            echo "<td>" . $dato["last_name"] . "</td>";
-            echo "<td>" . $dato["email"] . "</td>";
-            echo "<td><a href='index.php?c=vehiculos&a=modificar&id=".$dato["id"]."'>Edit</a></td>";
-            echo "<td><a href='index.php?c=vehiculos&a=eliminar&id=".$dato["id"]."'>Delete</a></td>";
+            echo "<td>" . $member["id"] . "</td>";
+            echo "<td>" . $member["name"] . "</td>";
+            echo "<td>" . $member["last_name"] . "</td>";
+            echo "<td>" . $member["email"] . "</td>";
+            echo "<td><a href=?c=vehiculos&a=modificar&id=".$member["id"]."'>Edit</a></td>";
+            echo "<td><a href=?c=vehiculos&a=eliminar&id=".$member["id"]."'>Delete</a></td>";
             echo "</tr>";
         }
         ?>
