@@ -18,22 +18,3 @@ require_once("controllers/MemberController.php");
 
 //$controller = new User_model();
 $controller = new MemberController();
-
-//$email = $_POST['email'];
-//echo $email;
-//$password = $_POST['password'];
-// if(isset($_GET['c'])){
-
-//     $controlador = cargarControlador($_GET['c']);
-
-//     if(isset($_GET['a'])){
-//         cargarAccion($controlador, $_GET['a']);
-//     }else{
-//         cargarAccion($controlador, ACCION_PRINCIPAL);
-//     }
-
-// }else{
-//     $controlador = cargarControlador(CONTROLLERS);
-//     $accionTmp = ACCION_PRINCIPAL;
-//     $controlador -> $accionTmp();
-//}
