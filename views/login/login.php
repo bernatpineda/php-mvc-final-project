@@ -9,7 +9,7 @@
 <body>
 
     <main class="form-signin w-100 m-auto">
-        <form id="login-form" method="POST" action="ini.php?controller=Login&action=validLogin">      
+        <form id="login-form" method="POST" action="index.php?controller=Login&action=validLogin">      
                 <!-- <img class="mb-4" src="./assets/brand/working-vector.ico" alt="" width="72" height="57" /> -->
 
             <h1 class="h3 mb-3 fw-normal">Please login</h1>
