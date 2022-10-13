@@ -6,7 +6,7 @@ class Router
     {   
         session_start();
         // session_status();
-        // session_destroy();
+        session_destroy();
 
         if (isset($_GET['controller'])) {
             //controller=member

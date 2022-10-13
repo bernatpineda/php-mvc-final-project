@@ -24,9 +24,50 @@ class MemberModel{
         }
     }
 
-    // function edit_user(){
-        
-    // }
+    function getById($id) {
+        // returns the array with the DB data of the selected member
+        echo " getById( $id ) | ";
+
+        $query = $this->db->connect()->prepare(
+            "SELECT id, name, last_name, email 
+            FROM members
+            WHERE id = $id;"
+        );
+
+        try {
+            $query->execute();
+            $member = $query->fetchAll(); 
+            // print_r($member);
+            return $member;
+        } catch (PDOException $e) {
+            return [];
+        }
+    }
+
+    function update($member){
+        echo " update( ";
+        print_r($member);
+        echo " ) | ";
+
+        $query = $this->db->connect()->prepare(
+            "UPDATE members
+            SET name = ?, last_name = ?, email = ? 
+            WHERE id = ?;"
+        );
+
+        $query->bindParam(1, $member["name"]);
+        $query->bindParam(2, $member["last_name"]);
+        $query->bindParam(3, $member["email"]);
+        $query->bindParam(4, $member["id"]);
+
+        try {
+            $query->execute();
+            return [true];
+        } catch (PDOException $e) {
+            return [false, $e];
+        }
+    }
+
     //function delete
     //function update
 
