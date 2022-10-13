@@ -23,10 +23,13 @@ class MemberModel{
             return [];
         }
     }
-}
 
-    function edit_user(){
+    // function edit_user(){
         
-    }
+    // }
     //function delete
     //function update
+
+}
+
+    

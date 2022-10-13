@@ -9,7 +9,7 @@ require_once "core/classes/View.php";
 require_once "core/classes/Controller.php";
 
 require_once "core/Router.php";
-// $router = new Router();
-    require_once("controllers/MemberController.php");
-    $controller = new MemberController();
+$router = new Router();
+    // require_once("controllers/MemberController.php");
+    // $controller = new MemberController();
 
