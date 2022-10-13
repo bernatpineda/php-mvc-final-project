@@ -90,4 +90,8 @@ class LoginController {
     //         return false;
     //     }
     // }
+
+    // function closeSession() {
+            
+    // }
 }

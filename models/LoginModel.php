@@ -1,7 +1,7 @@
 <?php
 
 // $pwdInput = "r123";
-// $pwdHashedInDb = password_hash($pwdInput, PASSWORD_DEFAULT);
+// $pwdHashedInDb = password_hash($pwdInput, PASSWORD_DEFAULT); //PASSWORD_BCRYPT
 // echo $pwdHashedInDb. "<br>";
 
 // $pwdVerify = password_verify($pwdInput, $pwdHashedInDb);
