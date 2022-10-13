@@ -4,8 +4,8 @@ class MemberController{
 
     public function __construct(){
         //esta funcion se llamara por el action del query:
-        $this -> getAllMembers();
-        
+        $action = $_GET["action"];
+        $this -> $action();        
     }
     
     public function getAllMembers(){
