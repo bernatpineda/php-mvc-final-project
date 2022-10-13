@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title><?php echo $data ["titulos"]; ?></title>
 </head>
 <body>
     <h2><?php echo $data ["titulos"]; ?></h2>
@@ -21,7 +21,7 @@
             </tr>
         </thead>
         <tbody>
-        <?php foreach($data["Users"] as $dato){
+        <?php foreach($data["vehiculo"] as $dato){
             echo "<tr>";
             echo "<td>" . $dato["name"] . "</td>";
             echo "<td>" . $dato["last_name"] . "</td>";

@@ -1,13 +1,14 @@
 <?php
 
 function cargarControlador($controlador){ 
-
-    $nombreControlador = $controlador . "Controller";
-    $archivoControlador = 'controllers/'.$controlador.'.php';
-
+    //nomre de la clase                    
+    $nombreControlador = $controlador . "3";
+    //nombre del archivo
+    $archivoControlador = 'controllers/' . $controlador . '.php';
+                        
     if(!is_file($archivoControlador)){
 
-        $archivoControlador = 'controllers/' . CONTROLLERS . '.php';
+        $archivoControlador = 'controllers/' . CONTROLADOR_PRINCIPAL . '.php';
         
     }
     //echo $archivoControlador;
