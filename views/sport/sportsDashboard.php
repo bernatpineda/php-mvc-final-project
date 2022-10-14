@@ -13,20 +13,20 @@
     <table border="1" width="80%">
         <thead>
             <tr>
-                <!-- <th>Id</th> -->
+                <th>Id</th>
                 <th>Enrolled members</th>
                 <th>Sports</th>
                 <th colspan='2'>Actions</th>
-                <!-- <th>Delete</th> -->
+                <th>Delete</th>
             </tr>
         </thead>
         <tbody>
         <?php foreach($gymSport as $sport){
             echo "<tr>";
             echo "<td>" . $sport["id"] . "</td>";
-            //echo "<td>" . $sport["count(members.id)"] . "</td>";
+            echo "<td>" . $sport["count(members.id)"] . "</td>";
             echo "<td>" . $sport["sport"] . "</td>";
-            //echo "<td><a href=?c=vehiculos&a=modificar&id=".$sport["id"]."'>Edit</a></td>";
+            echo "<td><a href=?c=vehiculos&a=modificar&id=".$sport["id"]."'>Edit</a></td>";
             echo "<td><a href='?controller=Sport&action=deleteSport&id=" . $sport["id"] . "'>Delete</a></td>";
             echo "</tr>";
         }
