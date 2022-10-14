@@ -2,8 +2,8 @@
 
 class MemberController {
 
-    public $model; // declarada como propiedad para redefinirla a acceder a ella en los métodos.
-    public $view;
+    // public $model; // declarada como propiedad para redefinirla a acceder a ella en los métodos.
+    // public $view;
 
     // public function __construct(){
     //     //esta funcion se llamara por el action del query:
