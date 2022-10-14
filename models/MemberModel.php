@@ -45,9 +45,10 @@ class MemberModel{
     }
 
     function update($member){
-        echo " update( ";
-        print_r($member);
-        echo " ) | ";
+        //echos
+            echo " update( ";
+            print_r($member);
+            echo " ) | ";
 
         $query = $this->db->connect()->prepare(
             "UPDATE members

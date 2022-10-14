@@ -9,8 +9,11 @@
 <body>
     <h1>Member <?= $this->data[0]["id"]; ?></h1>
 
-    <form action="index.php?controller=Member&action=<?php echo isset($this->data[0]['id']) ? "updateMember" : "createEmployee" ?>" method="post">
+    <form action="index.php?controller=Member&action=<?php echo isset($this->data[0]['id']) ? "updateMember" : "createMember" ?>" method="post">
         
+        <input type="hidden" name="id" value="<?php echo isset($this->data[0]['id']) ? $this->data[0]['id'] : null ?>">
+        <?= "input hidden: ".$this->data[0]['id']; ?>
+
         <div class="form-group">
             <label for="name">Name</label>
             <input required type="text" value="<?php echo isset($this->data[0]['name']) ? $this->data[0]['name'] : null ?>" 

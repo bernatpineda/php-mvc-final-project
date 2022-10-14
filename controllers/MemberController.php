@@ -27,27 +27,29 @@ class MemberController {
 
     function getMember($request) {
         // este método se usa en update para seleccionar el Member que hemos clicado según el id (el método se ejecuta en Query Param al clicar el link edit)
-        echo " getMember( ";
-        print_r($request);
-        echo " ) | ";
+        //echos
+            echo " getMember( ";
+            print_r($request);
+            echo " ) | ";
 
-        #$member = null;
+        $member = null; // ! WHY?
         if (isset($request["id"])) {
             $member = $this->model->getById($request["id"]);
         }
 
-        #$this->view->action = $request["action"];
+        $this->view->action = $request["action"]; // = getMember
         $this->view->data = $member;
         $this->view->render("member/member");
     }
 
     function updateMember($request) { 
-        // este método se ejecuta según el action Query Param (cuando existe el id al enviar el form de member.php)
-        echo " updateMember( ";
-        echo "<pre>";
-        print_r($request);
-        echo "</pre>";
-        echo " ) | ";
+        // este método se ejecuta según el action Query Param (cuando está seteado el id al enviar el form de member.php)
+        //echos
+            echo " updateMember( ";
+            echo "<pre>";
+            print_r($request);
+            echo "</pre>";
+            echo " ) | ";
 
         if (count($_POST) > 0) {
             print_r($_POST);
@@ -56,7 +58,7 @@ class MemberController {
             $member = $this->model->update($_POST); // los datos de $_POST vienen del form de member.php
             // $member recibe un true o false del return del método update de MemberModal.php
 
-            if ($member[0]) {
+            if ($member[0]) { // si update return true
                 echo $member[0];
                 header("Location: index.php?controller=Member&action=getAllMembers");
             } else {
