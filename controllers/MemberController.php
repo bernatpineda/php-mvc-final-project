@@ -97,4 +97,21 @@ class MemberController {
             $this->view->render("member/member");
         }
     }
+
+    function deleteMember($request) {
+        echo " deleteMember( ";
+        echo "<pre>";
+        print_r($request);
+        echo "</pre>";
+        echo " ) | ";
+
+        $action = $request["action"];
+        echo $action;
+        $member = null;
+
+        if (isset($request["id"])) {
+            $member = $this->model->delete($request["id"]);
+            header("Location: index.php?controller=Member&action=getAllMembers");
+        }
+    }
 }

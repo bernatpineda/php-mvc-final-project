@@ -1,9 +1,7 @@
 <?php
 
-class Router
-{
-    function __construct()
-    {   
+class Router {
+    function __construct() {   
         session_start();
 
         if (isset($_GET['controller'])) {
