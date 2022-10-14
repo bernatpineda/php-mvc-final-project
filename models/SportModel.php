@@ -8,7 +8,8 @@ class SportModel {
         $this -> db = new Database();
 
     }
-    //select m.id, m.name, m.last_name, s.sport from sports s right join members m  on m.id = s.id;
+   // select count(id), sport from sports group by sport;
+    //select s.id, m.name, m.last_name, s.sport from sports s right join members m  on m.id = s.id;
     //select COUNT(id), m.id, m.name, m.last_name, s.sport from sports s right join members m  on m.id = s.id GROUP BY id;
     //SELECT id, sport FROM sports
     function get_sports(){
