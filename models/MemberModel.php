@@ -12,7 +12,13 @@ class MemberModel{
     }
 
     function get_users(){
-        $query = $this->db->connect()->prepare("SELECT id, name, last_name, email FROM members");
+        // $query = $this->db->connect()->prepare("SELECT id, name, last_name, email FROM members");
+
+        $query = $this->db->connect()->prepare("SELECT m.id, m.name, m.last_name, m.email, s.sport 
+            FROM members m
+            INNER JOIN sports s ON m.sport_id = s.id"
+        );
+
         try {
             $query->execute(); // lanza la petición del prepare a la base de datos
             $members = $query->fetchAll();
