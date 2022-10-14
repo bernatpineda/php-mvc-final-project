@@ -13,10 +13,9 @@
     <table border="1" width="80%">
         <thead>
             <tr>
-                <th>Id</th>
+                <!-- <th>Id</th> -->
+                <th>Enrolled members</th>
                 <th>Sports</th>
-                <th>Name</th>
-                <th>Last_name</th>
                 <th colspan='2'>Actions</th>
                 <!-- <th>Delete</th> -->
             </tr>
@@ -24,11 +23,10 @@
         <tbody>
         <?php foreach($gymSport as $sport){
             echo "<tr>";
-            echo "<td>" . $sport["id"] . "</td>";
+            //echo "<td>" . $sport["id"] . "</td>";
+            echo "<td>" . $sport["count(members.id)"] . "</td>";
             echo "<td>" . $sport["sport"] . "</td>";
-            echo "<td>" . $sport["name"] . "</td>";
-            echo "<td>" . $sport["last_name"] . "</td>";
-            echo "<td><a href=?c=vehiculos&a=modificar&id=".$sport["id"]."'>Edit</a></td>";
+            //echo "<td><a href=?c=vehiculos&a=modificar&id=".$sport["id"]."'>Edit</a></td>";
             echo "<td><a href='?controller=Sport&action=deleteSport&id=" . $sport["id"] . "'>Delete</a></td>";
             echo "</tr>";
         }

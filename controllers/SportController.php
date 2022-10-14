@@ -18,17 +18,4 @@ class SportController{
         require_once("views/sport/sportsDashboard.php");
     }
 
-
-
-
-    //delete
-    // function deleteSport($request)
-    // {
-    //     $action = $request["action"];
-    //     $SPort = null;
-    //     if (isset($request["id"])) {
-    //         $SPort = $this-> SPort -> delete($request["id"]);
-    //         header("Location: index.php?controller=Sport&action=getAllSport");
-    //     }
-    // }
 }

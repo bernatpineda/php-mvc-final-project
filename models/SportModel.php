@@ -8,12 +8,10 @@ class SportModel {
         $this -> db = new Database();
 
     }
-   // select count(id), sport from sports group by sport;
-    //select s.id, m.name, m.last_name, s.sport from sports s right join members m  on m.id = s.id;
-    //select COUNT(id), m.id, m.name, m.last_name, s.sport from sports s right join members m  on m.id = s.id GROUP BY id;
-    //SELECT id, sport FROM sports
+
     function get_sports(){
-        $query = $this->db->connect()->prepare("select count(s.id), s.id, m.id, s.sport from sports s left join members m  on m.id = s.sport group by s.sport;");
+        
+        $query = $this->db->connect()->prepare("select count(members.id), sports.sport from sports right join members on members.sport_id = sports.id group by members.sport_id;");
         try {
             $query->execute(); // lanza la petición del prepare a la base de datos
             $sports = $query->fetchAll();
@@ -25,19 +23,4 @@ class SportModel {
         }
     }
 
-
-
-    //delete
-    // function delete($id)
-    // {
-    //     $query = $this->db->connect()->prepare("DELETE FROM sports WHERE id = ?");
-    //     $query->bindParam(1, $id);
-
-    //     try {
-    //         $query->execute();
-    //         return [true];
-    //     } catch (PDOException $e) {
-    //         return [false, $e];
-    //     }
-    // }
 }
