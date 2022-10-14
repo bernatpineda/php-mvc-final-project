@@ -8,7 +8,7 @@
 </head>
 <body>
     <h1>Members Dashboard</h1>
-    <a href="">Create</a>
+    <a href="?controller=Member&action=createMember">Create</a>
     <br /><br />
     <table border="1" width="80%">
         <thead>

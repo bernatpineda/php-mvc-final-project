@@ -23,6 +23,26 @@ class MemberModel{
             return [];
         }
     }
+    function create($member)
+    {
+        $query = $this->db->connect()->prepare("INSERT INTO members (`name`, last_name, email, sport_id)
+        VALUES
+        (?, ?, ?, ?);");
+
+        $query->bindParam(1, $member["name"]);
+        $query->bindParam(2, $member["last_name"]);
+        $query->bindParam(3, $member["email"]);
+        $query->bindParam(4, $member["sport_id"]);
+        
+   
+
+        try {
+            $query->execute();
+            return [true];
+        } catch (PDOException $e) {
+            return [false, $e];
+        }
+    }
 
     // function edit_user(){
         
