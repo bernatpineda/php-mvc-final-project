@@ -7,8 +7,9 @@
     <title></title>
 </head>
 <body>
-    <h1>Sport Dashboard</h1>
-    <a href="">Create</a>
+    <h1>Sports Dashboard</h1>
+    <a href="?controller=Sport&action=createSport">Create</a>
+    <a id="home" class="btn btn-secondary" href="./">Back</a>
     <br /><br />
     <table border="1" width="80%">
         <thead>

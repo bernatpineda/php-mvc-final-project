@@ -13,7 +13,7 @@
     <h1>Welcome to the Gym, <?php echo $this->data ?></h1>
     <div class="list-group">
         <a class="list-group-item list-group-item-action" href="?controller=Member&action=getAllMembers">Member Controller</a>
-        <a class="list-group-item list-group-item-action" href="?controller=Sport&action=getAllSport">Sports Controller</a>
+        <a class="list-group-item list-group-item-action" href="?controller=Sport&action=getAllSports">Sports Controller</a>
     </div>
 </body>
 
