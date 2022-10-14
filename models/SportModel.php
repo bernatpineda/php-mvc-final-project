@@ -6,7 +6,6 @@ class SportModel {
 
     public function __construct(){
         $this -> db = new Database();
-
     }
 
     function get_sports(){

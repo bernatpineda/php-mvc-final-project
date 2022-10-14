@@ -90,9 +90,7 @@ class MemberModel{
         }
     }
 
-    //function delete
-    function delete($id)
-    {
+    function delete($id) {
         $query = $this->db->connect()->prepare("DELETE FROM members WHERE id = ?");
         $query->bindParam(1, $id);
 
@@ -105,7 +103,6 @@ class MemberModel{
     }
     
 }
-    //function update
 
 
 

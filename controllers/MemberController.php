@@ -98,14 +98,15 @@ class MemberController {
         }
     }
 
-    public function deleteMembers($request)
+    public function deleteMember($request)
     {
         $action = $request["action"];
-        $members = null;
+        $member = null;
         if (isset($request["id"])) {
-            $members = $this->model->delete($request["id"]);
+            $member = $this->model->delete($request["id"]);
             header("Location: index.php?controller=Member&action=getAllMembers");
         }
 
     }
+    
 }
