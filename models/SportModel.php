@@ -13,7 +13,7 @@ class SportModel {
     //select COUNT(id), m.id, m.name, m.last_name, s.sport from sports s right join members m  on m.id = s.id GROUP BY id;
     //SELECT id, sport FROM sports
     function get_sports(){
-        $query = $this->db->connect()->prepare("select s.id, m.name, m.last_name, s.sport from sports s right join members m  on m.id = s.id;");
+        $query = $this->db->connect()->prepare("select count(s.id), s.id, m.id, s.sport from sports s left join members m  on m.id = s.sport group by s.sport;");
         try {
             $query->execute(); // lanza la petición del prepare a la base de datos
             $sports = $query->fetchAll();
