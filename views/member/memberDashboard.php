@@ -1,3 +1,5 @@
+<!-- NO SE ESTÁ USANDO -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,7 +14,7 @@
         </br>
 
         <?php
-        if ($this->action == "getEmployee" && (!isset($this->data) || !$this->data || sizeof($this->data) == 0)) {
+        if ($this->action == "getMember" && (!isset($this->data) || !$this->data || sizeof($this->data) == 0)) {
             echo "<p>The employee does not exists!</p>";
         } else if (isset($error)) {
             echo "<p>$error</p>";

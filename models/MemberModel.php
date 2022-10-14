@@ -23,6 +23,7 @@ class MemberModel{
             return [];
         }
     }
+    
     function create($member)
     {
         $query = $this->db->connect()->prepare("INSERT INTO members (`name`, last_name, email, sport_id)
@@ -90,7 +91,6 @@ class MemberModel{
     }
 
     //function delete
-    //function update
 
 }
 

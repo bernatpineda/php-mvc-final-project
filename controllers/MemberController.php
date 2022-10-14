@@ -71,8 +71,9 @@ class MemberController {
                 header("Location: index.php?controller=Member&action=getAllMembers");
             } else {
                 echo "Incorrect data";
-                // $this->action = $request["action"];
-                // $this->error = "The data entered is incorrect, check that there is no other employee with that email.";
+                // estas propiedades se utilizan para validar el update en membersDashboard.php
+                $this->action = $request["action"];
+                $this->error = "The data entered is incorrect, check that there is no other employee with that email.";
                 $this->view->render("member/member");
             }
 
@@ -93,7 +94,7 @@ class MemberController {
             }
         } else {
             $this->view->action = $request["action"];
-            $this->view->render("member/memberDashboard");
+            $this->view->render("member/member");
         }
     }
 }
