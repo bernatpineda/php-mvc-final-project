@@ -67,7 +67,7 @@ class MemberController {
             // $member recibe un true o false del return del método update de MemberModal.php
 
             if ($member[0]) { // si update return true
-                echo $member[0];
+                //echo $member[0];
                 header("Location: index.php?controller=Member&action=getAllMembers");
             } else {
                 echo "Incorrect data";
@@ -90,11 +90,21 @@ class MemberController {
             if ($member[0]) {
                 header("Location: index.php?controller=Member&action=getAllMembers");
             } else {
-                echo $member[1];
+                //echo $member[1];
             }
         } else {
             $this->view->action = $request["action"];
             $this->view->render("member/member");
+        }
+    }
+
+    function deleteMember($request)
+    {
+        $action = $request["action"];
+        $member = null;
+        if (isset($request["id"])) {
+            $member = $this->model->delete($request["id"]);
+            header("Location: index.php?controller=Member&action=getAllMembers");
         }
     }
 }
