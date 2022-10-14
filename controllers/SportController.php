@@ -21,7 +21,7 @@ class SportController{
     {
         if (sizeof($_POST) > 0) {
             $sport = $this->model->create($_POST);
-
+            
             if ($sport[0]) {
                 header("Location: index.php?controller=Sport&action=getAllSports");
             } else {

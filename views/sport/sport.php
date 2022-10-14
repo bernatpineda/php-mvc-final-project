@@ -14,7 +14,7 @@
         echo "<h1>New Sport</h1>";
     }
     
-    if ($this->action == "getSport" && (!isset($this->data) || !$this->data || sizeof($this->data) == 0)) {
+    if ($this->action == "getSports" && (!isset($this->data) || !$this->data || sizeof($this->data) == 0)) {
         echo "<p>The sport does not exists!</p>";
     } else if (isset($error)) {
         echo "<p>$error</p>";
