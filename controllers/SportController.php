@@ -4,20 +4,32 @@ class SportController{
 
     use Controller;
 
-    public function __construct(){
-        
-        $action = $_GET["action"];
-        $this -> $action();        
-    }
+
     
     public function getAllSport(){
 
         require_once("models/SportModel.php");
 
         $modelS = new SportModel();
-        $gymSport = $modelS -> get_sports();
+        $gymSport = $modelS -> getSport();
         
         require_once("views/sport/sportsDashboard.php");
+    }
+
+    function getSport($request) {
+
+            echo " getSport( ";
+            print_r($request);
+            echo " ) | ";
+
+        $sport = null;
+        if (isset($request["id"])) {
+            $sport = $this->model->getById($request["id"]);
+        }
+
+        $this->view->action = $request["action"];
+        $this->view->data = $sport;
+        $this->view->render("sport/sport");
     }
 
     function updateSport($request) { 
@@ -32,39 +44,49 @@ class SportController{
             print_r($_POST);
             echo " | ";
 
-            $member = $this->model->update($_POST); // los datos de $_POST vienen del form de member.php
-            // $member recibe un true o false del return del método update de MemberModal.php
-
-            if ($member[0]) { // si update return true
-                echo $member[0];
-                header("Location: index.php?controller=Member&action=getAllMembers");
+            $sport = $this -> model -> update($_POST);
+            
+            if ($sport[0]) {
+                echo $sport[0];
+                header("Location: index.php?controller=Sport&action=getAllSport");
             } else {
                 echo "Incorrect data";
-                // estas propiedades se utilizan para validar el update en membersDashboard.php
+                
                 $this->action = $request["action"];
                 $this->error = "The data entered is incorrect, check that there is no other employee with that email.";
-                $this->view->render("member/member");
+                $this->view->render("sport/sport");
             }
 
         } else {
-            $this->view->render("member/member");
+            $this->view->render("sport/sport");
         }
     }
 
-    function createMember($request)
+    function createSport($request)
     {
         if (sizeof($_POST) > 0) {
-            $member = $this->model->create($_POST);
+            $sport = $this-> model -> create($_POST);
 
-            if ($member[0]) {
-                header("Location: index.php?controller=Member&action=getAllMembers");
+            if ($sport[0]) {
+                header("Location: index.php?controller=Sport&action=getAllSport");
             } else {
-                echo $member[1];
+                echo $sport[1];
             }
         } else {
             $this->view->action = $request["action"];
-            $this->view->render("member/member");
+            $this->view->render("sport/sport");
         }
+    }
+
+    public function deleteSport($request)
+    {
+        $action = $request["action"];
+        $sport = null;
+        if (isset($request["id"])) {
+            $sport = $this->model->delete($request["id"]);
+            header("Location: index.php?controller=Sport&action=getAllSport");
+        }
+
     }
 
 }

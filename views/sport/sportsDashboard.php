@@ -26,7 +26,7 @@
             echo "<td>" . $sport["id"] . "</td>";
             echo "<td>" . $sport["count(members.id)"] . "</td>";
             echo "<td>" . $sport["sport"] . "</td>";
-            echo "<td><a href='?controller=Member&action=getMember&id=" . $sport["id"] ."'>Edit</a></td>";
+            echo "<td><a href='?controller=Sport&action=getSport&id=" . $sport["id"] ."'>Edit</a></td>";
             echo "<td><a href='?controller=Sport&action=deleteSport&id=" . $sport["id"] . "'>Delete</a></td>";
             echo "</tr>";
         }
