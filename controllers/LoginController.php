@@ -92,6 +92,7 @@ class LoginController {
     // }
 
     // function closeSession() {
-            
+            // session_destroy();
+            // header(Location: index.php)
     // }
 }

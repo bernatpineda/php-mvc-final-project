@@ -4,11 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>Members Dashboard</title>
 </head>
 <body>
     <h1>Members Dashboard</h1>
-    <a href="">Create</a>
+    <a href="?controller=Member&action=createMember">Create</a>
+    <a id="home" class="btn btn-secondary" href="./">Back</a>
+
     <br /><br />
     <table border="1" width="80%">
         <thead>
@@ -28,7 +30,7 @@
             echo "<td>" . $member["name"] . "</td>";
             echo "<td>" . $member["last_name"] . "</td>";
             echo "<td>" . $member["email"] . "</td>";
-            echo "<td><a href=?c=vehiculos&a=modificar&id=".$member["id"]."'>Edit</a></td>";
+            echo "<td><a class='btn btn-secondary' href='?controller=Member&action=getMember&id=".$member["id"]."'>Edit</a></td>";
             echo "<td><a href=?c=vehiculos&a=eliminar&id=".$member["id"]."'>Delete</a></td>";
             echo "</tr>";
         }

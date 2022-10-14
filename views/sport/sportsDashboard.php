@@ -7,7 +7,7 @@
     <title></title>
 </head>
 <body>
-    <h1>Members Dashboard</h1>
+    <h1>Sport Dashboard</h1>
     <a href="">Create</a>
     <br /><br />
     <table border="1" width="80%">
