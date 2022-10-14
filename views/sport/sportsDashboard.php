@@ -17,7 +17,7 @@
                 <th>Enrolled members</th>
                 <th>Sports</th>
                 <th colspan='2'>Actions</th>
-                <th>Delete</th>
+                
             </tr>
         </thead>
         <tbody>
