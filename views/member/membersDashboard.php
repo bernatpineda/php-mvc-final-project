@@ -29,7 +29,7 @@
             echo "<td>" . $member["last_name"] . "</td>";
             echo "<td>" . $member["email"] . "</td>";
             echo "<td><a href=?c=vehiculos&a=modificar&id=".$member["id"]."'>Edit</a></td>";
-            echo "<td><a href=?c=vehiculos&a=eliminar&id=".$member["id"]."'>Delete</a></td>";
+            echo "<td><a href=?controller=Member&action=deleteMembers&id=".$member["id"]."'>Delete</a></td>";
             echo "</tr>";
         }
         ?>
