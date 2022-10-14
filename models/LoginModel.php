@@ -18,7 +18,7 @@ class LoginModel {
         }
     // }
 
-    function get($emailInput) { // $loginInputs es un array con el email y el password que haya introducido el usuario
+    function get($emailInput) { 
         // returns the array with the DB data
         echo " get( $emailInput ) | ";
 
