@@ -31,6 +31,9 @@ class SportController{
             $this->view->action = $request["action"];
             $this->view->render("sport/sport");
         }
+
+     
+
     }
 
 }
