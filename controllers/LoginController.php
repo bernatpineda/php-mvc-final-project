@@ -83,6 +83,11 @@ class LoginController {
         }
     }
 
+    function closeSession() {
+        session_destroy();
+        header("Location: index.php");
+    }
+
     // function validSession() {
     //     if (isset($_SESSION["email"])) {
     //         return true;
@@ -91,8 +96,4 @@ class LoginController {
     //     }
     // }
 
-    // function closeSession() {
-            // session_destroy();
-            // header(Location: index.php)
-    // }
 }

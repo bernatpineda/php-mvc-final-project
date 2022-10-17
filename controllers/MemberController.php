@@ -2,8 +2,8 @@
 
 class MemberController {
 
-    public $model; // declarada como propiedad para redefinirla a acceder a ella en los métodos.
-    public $view;
+    // public $model; // declarada como propiedad para redefinirla a acceder a ella en los métodos.
+    // public $view;
 
 
 
@@ -19,7 +19,7 @@ class MemberController {
         //me traigo la view/member/membersDashboard, se lee aki
         require_once("views/member/membersDashboard.php");
     }
-
+    
     function getMember($request) {
         // este método se usa en update para seleccionar el Member que hemos clicado según el id (el método se ejecuta en Query Param al clicar el link edit)
         //echos
@@ -84,4 +84,16 @@ class MemberController {
             $this->view->render("member/member");
         }
     }
+
+    public function deleteMember($request)
+    {
+        $action = $request["action"];
+        $member = null;
+        if (isset($request["id"])) {
+            $member = $this->model->delete($request["id"]);
+            header("Location: index.php?controller=Member&action=getAllMembers");
+        }
+
+    }
+    
 }
