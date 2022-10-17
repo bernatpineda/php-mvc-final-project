@@ -44,6 +44,6 @@
         </tbody>
     </table>
 
-    <?php #require_once("assets/html/footer.html") ?>
+    <?php require_once("views/footer/footer.php") ?>
 </body>
 </html>
