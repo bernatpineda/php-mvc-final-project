@@ -2,6 +2,13 @@
 
 class SportController {
 
+    public $model; // declarada como propiedad para redefinirla a acceder a ella en los métodos.
+    public $view;
+   // public function __construct(){
+        
+       // $action = $_GET["action"];
+       // $this -> $action();        
+    //}
     use Controller;
     
     public function getAllSports() {
@@ -17,6 +24,20 @@ class SportController {
                 return $sports;
             }
         }
+    }
+    public function deleteSports($request)
+    {
+        print_r($request);
+        require_once("models/SportModel.php");
+
+        $modelS = new SportModel();
+        $action = $request["action"];
+        $sports = null;
+        if (isset($request["id"])) {
+            $sports = $this->model->delete($request["id"]);
+            header("Location: index.php?controller=Sport&action=getAllSport");
+        }
+
     }
 
     function getSport($request) {
@@ -81,15 +102,15 @@ class SportController {
         }
     }
 
-    public function deleteSport($request)
-    {
-        $action = $request["action"];
-        $sport = null;
-        if (isset($request["id"])) {
-            $sport = $this->model->delete($request["id"]);
-            header("Location: index.php?controller=Sport&action=getAllSports");
-        }
+   // public function deleteSport($request)
+    //{
+      //  $action = $request["action"];
+      //  $sport = null;
+      //  if (isset($request["id"])) {
+       //     $sport = $this->model->delete($request["id"]);
+     //       header("Location: index.php?controller=Sport&action=getAllSports");
+     //   }
 
-    }
+    //}
 
 }
