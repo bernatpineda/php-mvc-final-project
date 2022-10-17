@@ -8,7 +8,7 @@ class SportModel {
         $this -> db = new Database();
     }
 
-    function getSports(){
+    function get(){
         
         //$query = $this->db->connect()->prepare("SELECT count(members.id), sports.sport, sports.id FROM sports right join members on members.sport_id = sports.id group by members.sport_id;");
         $query = $this->db->connect()->prepare("SELECT id, sport FROM sports");
@@ -73,6 +73,7 @@ class SportModel {
         );
 
         $query->bindParam(1, $sport["sport"]);
+        $query->bindParam(2, $sport["id"]);
 
         try {
             $query->execute();

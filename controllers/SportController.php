@@ -11,7 +11,7 @@ class SportController{
        //require_once("models/SportModel.php");
 
        // $model = new SportModel();
-        $gymSport = $this -> model -> getSports();
+        $gymSport = $this -> model -> get();
         
         require_once("views/sport/sportsDashboard.php");
     }
@@ -52,7 +52,7 @@ class SportController{
             } else {
                 echo "Incorrect data";
                 
-                $this->action = $request["action"];
+                $this -> action = $request["action"];
                 $this->error = "The data entered is incorrect, check that there is no other employee with that email.";
                 $this->view->render("sport/sport");
             }
