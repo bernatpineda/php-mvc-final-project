@@ -9,6 +9,8 @@
 </head>
 
 <body>
+    <?php require_once("assets/html/header.html") ?>
+
     <a href="?controller=Login&action=closeSession">Logout</a>
     <h1>Welcome to Hamilton Sports Center</h1>
     <div class="list-group">
