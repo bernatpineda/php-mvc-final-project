@@ -25,7 +25,7 @@
             </tr>
         </thead>
         <tbody>
-        <?php foreach($sports as $sport){
+        <?php foreach($sports as $sport) {
             echo "<tr>";
             echo "<td>" . $sport["id"] . "</td>";
             echo "<td>" . $sport["sport"] . "</td>";
