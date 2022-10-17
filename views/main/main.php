@@ -21,12 +21,13 @@
 
     <div class="container py-5 text-center">
         <div class="row gx-5">
-            <div class="col">
-                <div class=" list-group p-3 border bg-light"><a class="list-group-item list-group-item-action" href="?controller=Member&action=getAllMembers">Member Controller</a></div>
-            </div>
-            <div class="col">
+            <h2 class="col fs-5">
+                <div class="list-group p- .
+                 border bg-light"><a class="list-group-item list-group-item-action" href="?controller=Member&action=getAllMembers">Member Controller</a></div>
+            </h2>
+            <h2 class="col fs-5">
                 <div class="list-group p-3 border bg-light"><a class=" list-group-item list-group-item-action" href="?controller=Sport&action=getAllSports">Sports Controller</a></div>
-            </div>
+            </h2>
         </div>
     </div>
 </body>
