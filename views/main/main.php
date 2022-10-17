@@ -10,7 +10,7 @@
 
 <body>
     <a href="?controller=Login&action=closeSession">Logout</a>
-    <h1>Welcome to Gym Hamilton</h1>
+    <h1>Welcome to Hamilton Sports Center</h1>
     <div class="list-group">
         <a class="list-group-item list-group-item-action" href="?controller=Member&action=getAllMembers">Member Controller</a>
         <a class="list-group-item list-group-item-action" href="?controller=Sport&action=getAllSports">Sports Controller</a>
