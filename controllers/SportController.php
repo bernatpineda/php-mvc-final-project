@@ -8,12 +8,8 @@ class SportController{
 
     use Controller;
     public function getAllSports(){
+        $gymSport = $this->model-> getSports();
 
-        require_once("models/SportModel.php");
-
-        $modelS = new SportModel();
-        $gymSport = $modelS -> getSports();
-        
         require_once("views/sport/sportsDashboard.php");
     }
 

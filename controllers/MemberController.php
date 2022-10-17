@@ -5,24 +5,11 @@ class MemberController {
     public $model; // declarada como propiedad para redefinirla a acceder a ella en los métodos.
     public $view;
 
-    // public function __construct(){
-    //     //esta funcion se llamara por el action del query:
-    //     $action = $_GET["action"];
-    //     $this -> $action();        
-    // }
+
 
     use Controller;
     
-    // public function __construct(){
-    //     require_once("models/MemberModel.php");
-    //     $this->model = new MemberModel();
 
-    //     $this->view = new View();
-
-    //     //esta funcion se llamara por el action del query:
-    //     $action = $_GET["action"];
-    //     $this -> $action($_REQUEST); // he añadido el parámetro $_REQUEST, que es un array de los Query Params.      
-    // }
     
     public function getAllMembers(){
         // require_once("models/MemberModel.php"); // AHORA EN EL CONSTRUCT
