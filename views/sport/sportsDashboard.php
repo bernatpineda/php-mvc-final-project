@@ -21,7 +21,7 @@
             </tr>
         </thead>
         <tbody>
-        <?php foreach($gymSport as $sport){
+        <?php foreach($sports as $sport){
             echo "<tr>";
             echo "<td>" . $sport["id"] . "</td>";
             //echo "<td>" . $sport["count(members.id)"] . "</td>";

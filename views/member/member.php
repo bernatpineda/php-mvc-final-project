@@ -44,20 +44,50 @@
 
         <div class="form-group">
             <label for="name">Email</label>
-            <input required type="text" value="<?php echo isset($this->data[0]['last_name']) ? $this->data[0]['email'] : null ?>" 
+            <input required type="text" value="<?php echo isset($this->data[0]['email']) ? $this->data[0]['email'] : null ?>" 
                 class="form-control" id="email" name="email" aria-describedby="lastnameHelp" placeholder="Email"
             >
         </div>
 
-        <div class="form-group">
+        <!-- <div class="form-group">
             <label for="sport">Sport</label>
             <select name="sport_id" class="form-control" id="sport" required>
                 <option value="">Please Select</option>
-                <option value="1" <?php echo isset($this->data['sport_id']) && $this->data['sport_id']  == 1 ? 'selected' : null; ?>>Pilates</option>
-                <option value="2" <?php echo isset($this->data['sport_id']) && $this->data['sport_id']  == 2 ? 'selected' : null; ?>>Powerlifting</option>
-                <option value="3" <?php echo isset($this->data['sport_id']) && $this->data['sport_id']  == 3 ? 'selected' : null; ?>>Padel</option>
+                <option value="1" <?php echo isset($this->data['sport']) && $this->data['sport'] == 1 ? 'selected' : null; ?> >Pilates</option>
+                <option value="2" <?php echo isset($this->data['sport']) && $this->data['sport'] == 2 ? 'selected' : null; ?> >Powerlifting</option>
+                <option value="3" <?php echo isset($this->data['sport']) && $this->data['sport'] == 3 ? 'selected' : null; ?> >Padel</option>
+            </select>
+        </div> -->
+
+        <!-- dinamic -->    
+
+        <?php
+            require_once CONTROLLERS . "SportController.php";  
+            $sportController = new SportController();
+            $sports = $sportController->getAllSport();
+            // echo '$sport = ';
+            // echo "<pre>";
+            // print_r($sports);
+            // echo "</pre>";
+        ?>
+
+        <div class="form-group">
+            <label for="sport">Sport Din</label>
+            <select name="sport_id" class="form-control" id="sport" required>
+                <option value="">Please Select</option>
+                
+                <?php
+                foreach ($sports as $sport) {
+                    ?>
+                    <option value="<?= $sport["id"] ?>" <?= isset($this->data[0]['sport_id']) && $this->data[0]['sport_id'] == $sport["id"] ? 'selected' : null; ?> ><?= $sport["sport"] ?></option>
+                    <?php
+                }
+                ?>
+
             </select>
         </div>
+
+
 
         <button type="submit" class="btn btn-primary">Submit</button>
         <a id="return" class="btn btn-secondary" href="<?php echo "?controller=Member&action=getAllMembers&action=getAllMembers"; ?>">Return</a>
@@ -65,3 +95,17 @@
     </form>
 </body>
 </html>
+
+<?php 
+        // foreach($members as $member){
+        //     echo "<tr>";
+        //     echo "<td>" . $member["id"] . "</td>";
+        //     echo "<td>" . $member["name"] . "</td>";
+        //     echo "<td>" . $member["last_name"] . "</td>";
+        //     echo "<td>" . $member["email"] . "</td>";
+        //     echo "<td>" . $member["sport"] . "</td>";
+        //     echo "<td><a class='btn btn-secondary' href='?controller=Member&action=getMember&id=" . $member["id"] . "'>Edit</a></td>";
+        //     echo "<td><a class='btn btn-danger' href='?controller=Member&action=deleteMember&id=" . $member["id"] . "'>Delete</a></td>";
+        //     echo "</tr>";
+        // }
+        ?>

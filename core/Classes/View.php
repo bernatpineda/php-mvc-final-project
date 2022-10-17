@@ -6,7 +6,7 @@ class View {
     function render($name) {
         //echos
             echo "render( $name ) | ";
-            echo "data = ";
+            echo "<br> data = ";
             echo "<pre>";
             print_r($this->data);
             echo "</pre>";

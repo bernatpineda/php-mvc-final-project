@@ -21,12 +21,11 @@
                 <th>Email</th>
                 <th>Sport</th>
                 <th colspan='2'>Actions</th>
-                <!-- <th>Delete</th> -->
             </tr>
         </thead>
         <tbody>
         <?php 
-        foreach($gymUser as $member){
+        foreach($members as $member) {
             echo "<tr>";
             echo "<td>" . $member["id"] . "</td>";
             echo "<td>" . $member["name"] . "</td>";
