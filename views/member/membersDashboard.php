@@ -9,7 +9,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 </head>
 <body>
-    <?php #require_once("assets/html/header.html") ?>
+<?php require_once("views/header/header.php") ?>
 
     <h1>Members Dashboard</h1>
     <a href="?controller=Member&action=createMember"  class="btn btn-primary">Create</a>

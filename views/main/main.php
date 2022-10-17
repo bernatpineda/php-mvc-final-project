@@ -14,9 +14,6 @@
 
 <body>
 <?php require_once("views/header/header.php") ?>
-    <div class="mt-5 d-grid gap-2 d-md-flex justify-content-md-end">
-        <a class="btn btn-outline-success me-md-4" href="?controller=Login&action=closeSession">Logout</a>
-    </div>
 
     <div class="container text-center mt-5">
         <h1 class="title">Welcome to Hamilton Sport Center</h1>
