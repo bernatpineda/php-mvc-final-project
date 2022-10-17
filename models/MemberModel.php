@@ -1,18 +1,17 @@
 <?php
 
-class MemberModel{
-    
-    private $db;
+class MemberModel extends Model {
 
-    public function __construct(){
-        $this -> db = new Database();
+    function get() {
+        // $query = $this->db->connect()->prepare("SELECT id, name, last_name, email FROM members");
 
-        //esta variable la hace el usercontroller(prueba):
-        //$gymUser = $this -> get_users();
-    }
+        $query = $this->db->connect()->prepare(
+            "SELECT m.id, m.name, m.last_name, m.email, s.sport 
+            FROM members m
+            INNER JOIN sports s 
+            ON m.sport_id = s.id;"
+        );
 
-    function get_users(){
-        $query = $this->db->connect()->prepare("SELECT id, name, last_name, email FROM members");
         try {
             $query->execute(); // lanza la petición del prepare a la base de datos
             $members = $query->fetchAll();
@@ -23,35 +22,17 @@ class MemberModel{
             return [];
         }
     }
-    
-    function create($member)
-    {
-        $query = $this->db->connect()->prepare("INSERT INTO members (`name`, last_name, email, sport_id)
-        VALUES
-        (?, ?, ?, ?);");
-
-        $query->bindParam(1, $member["name"]);
-        $query->bindParam(2, $member["last_name"]);
-        $query->bindParam(3, $member["email"]);
-        $query->bindParam(4, $member["sport_id"]);
-        
-
-        try {
-            $query->execute();
-            return [true];
-        } catch (PDOException $e) {
-            return [false, $e];
-        }
-    }
 
     function getById($id) {
         // returns the array with the DB data of the selected member
         echo " getById( $id ) | ";
 
         $query = $this->db->connect()->prepare(
-            "SELECT id, name, last_name, email 
-            FROM members
-            WHERE id = $id;"
+            "SELECT m.id, m.name, m.last_name, m.email, s.id as sport_id, s.sport 
+            FROM members m
+            INNER JOIN sports s 
+            ON m.sport_id = s.id 
+            WHERE m.id = $id;"
         );
 
         try {
@@ -72,14 +53,35 @@ class MemberModel{
 
         $query = $this->db->connect()->prepare(
             "UPDATE members
-            SET name = ?, last_name = ?, email = ? 
+            SET name = ?, last_name = ?, email = ?, sport_id = ? 
             WHERE id = ?;"
         );
 
         $query->bindParam(1, $member["name"]);
         $query->bindParam(2, $member["last_name"]);
         $query->bindParam(3, $member["email"]);
-        $query->bindParam(4, $member["id"]);
+        $query->bindParam(4, $member["sport_id"]);
+        $query->bindParam(5, $member["id"]);
+
+        try {
+            $query->execute();
+            return [true];
+        } catch (PDOException $e) {
+            return [false, $e];
+        }
+    }
+
+    function create($member) {
+        $query = $this->db->connect()->prepare("INSERT INTO members (`name`, last_name, email, sport_id)
+        VALUES
+        (?, ?, ?, ?);");
+
+        $query->bindParam(1, $member["name"]);
+        $query->bindParam(2, $member["last_name"]);
+        $query->bindParam(3, $member["email"]);
+        $query->bindParam(4, $member["sport_id"]);
+        
+   
 
         try {
             $query->execute();

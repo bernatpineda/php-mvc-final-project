@@ -19,6 +19,15 @@
     } else if (isset($error)) {
         echo "<p>$error</p>";
     }
+
+    // para hacer el select de sport
+    require_once CONTROLLERS . "SportController.php";  
+    $sportController = new SportController();
+    $sports = $sportController->getAllSports();
+    // echo '$sport = ';
+    // echo "<pre>";
+    // print_r($sports);
+    // echo "</pre>";
     ?>
 
     <form action="index.php?controller=Member&action=<?php echo isset($this->data[0]['id']) ? "updateMember" : "createMember" ?>" method="post">
@@ -44,24 +53,31 @@
 
         <div class="form-group">
             <label for="name">Email</label>
-            <input required type="text" value="<?php echo isset($this->data[0]['last_name']) ? $this->data[0]['email'] : null ?>" 
+            <input required type="text" value="<?php echo isset($this->data[0]['email']) ? $this->data[0]['email'] : null ?>" 
                 class="form-control" id="email" name="email" aria-describedby="lastnameHelp" placeholder="Email"
             >
-        </div>
+        </div>  
 
         <div class="form-group">
-            <label for="sport">Sport</label>
+            <label for="sport">Sport Din</label>
             <select name="sport_id" class="form-control" id="sport" required>
                 <option value="">Please Select</option>
-                <option value="1" <?php echo isset($this->data['sport_id']) && $this->data['sport_id']  == 1 ? 'selected' : null; ?>>Pilates</option>
-                <option value="2" <?php echo isset($this->data['sport_id']) && $this->data['sport_id']  == 2 ? 'selected' : null; ?>>Powerlifting</option>
-                <option value="3" <?php echo isset($this->data['sport_id']) && $this->data['sport_id']  == 3 ? 'selected' : null; ?>>Padel</option>
+                
+                <?php
+                foreach ($sports as $sport) {
+                    ?>
+                    <option value="<?= $sport["id"] ?>" <?= isset($this->data[0]['sport_id']) && $this->data[0]['sport_id'] == $sport["id"] ? 'selected' : null; ?> ><?= $sport["sport"] ?></option>
+                    <?php
+                }
+                ?>
+
             </select>
         </div>
 
         <button type="submit" class="btn btn-primary">Submit</button>
-        <a id="return" class="btn btn-secondary" href="<?php echo "?controller=Member&action=getAllMembers&action=getAllMembers"; ?>">Return</a>
+        <a id="return" class="btn btn-secondary" href="<?php echo "?controller=Member&action=getAllMembers"; ?>">Return</a>
 
     </form>
 </body>
 </html>
+

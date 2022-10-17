@@ -7,6 +7,8 @@
     <title>Members Dashboard</title>
 </head>
 <body>
+    <?php #require_once("assets/html/header.html") ?>
+
     <h1>Members Dashboard</h1>
     <a href="?controller=Member&action=createMember">Create</a>
     <a id="home" class="btn btn-secondary" href="./">Back</a>
@@ -19,17 +21,19 @@
                 <th>Name users</th>
                 <th>Last name</th>
                 <th>Email</th>
+                <th>Sport</th>
                 <th colspan='2'>Actions</th>
-                <!-- <th>Delete</th> -->
             </tr>
         </thead>
         <tbody>
-        <?php foreach($gymUser as $member){
+        <?php 
+        foreach($members as $member) {
             echo "<tr>";
             echo "<td>" . $member["id"] . "</td>";
             echo "<td>" . $member["name"] . "</td>";
             echo "<td>" . $member["last_name"] . "</td>";
             echo "<td>" . $member["email"] . "</td>";
+            echo "<td>" . $member["sport"] . "</td>";
             echo "<td><a class='btn btn-secondary' href='?controller=Member&action=getMember&id=" . $member["id"] . "'>Edit</a></td>";
             echo "<td><a class='btn btn-danger' href='?controller=Member&action=deleteMember&id=" . $member["id"] . "'>Delete</a></td>";
             echo "</tr>";
@@ -37,5 +41,7 @@
         ?>
         </tbody>
     </table>
+
+    <?php #require_once("assets/html/footer.html") ?>
 </body>
 </html>

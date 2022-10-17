@@ -1,5 +1,6 @@
 <?php
 
+// ENCRYPT AND VERIFY PASSWORDS
 // $pwdInput = "r123";
 // $pwdHashedInDb = password_hash($pwdInput, PASSWORD_DEFAULT); //PASSWORD_BCRYPT
 // echo $pwdHashedInDb. "<br>";
@@ -7,16 +8,7 @@
 // $pwdVerify = password_verify($pwdInput, $pwdHashedInDb);
 // echo $pwdVerify . " incorrect";
 
-class LoginModel {
-    // meterlo en una super class Model que sea heredada por todos los Models
-    // class Model {
-        protected $db;
-        function __construct() {
-            echo "LoginModel __construct() | ";
-
-            $this->db = new Database();
-        }
-    // }
+class LoginModel extends Model {
 
     function get($emailInput) { 
         // returns the array with the DB data
@@ -40,11 +32,4 @@ class LoginModel {
         }
     }
 
-    // function validLogin()
 }
-
-// en vez de render: header("Location: ini.php?controller=employee&action=showAll");
-
-// $emailInputName = substr($emailInput, 0, -10);
-// $emailInputExt = substr($pwdInput, -9);
-// echo " ". $emailInputName . " - $emailInputExt | ";

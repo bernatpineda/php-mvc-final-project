@@ -1,6 +1,6 @@
 <?php
 
-class SportController{
+class SportController {
 
     public $model; // declarada como propiedad para redefinirla a acceder a ella en los métodos.
     public $view;
@@ -10,22 +10,20 @@ class SportController{
        // $this -> $action();        
     //}
     use Controller;
-
-    public function getAllSport(){
-    //use Controller;
-
-
     
-   // public function getAllSports(){
+    public function getAllSports() {
 
-       //require_once("models/SportModel.php");
-
-        $modelS = new SportModel();
-        $gymSport = $modelS -> getSports();
-       // $model = new SportModel();
-        $gymSport = $this -> model -> get();
+        $sports = $this->model->get();
         
-        require_once("views/sport/sportsDashboard.php");
+        if (isset($sports)) {
+            if ($_GET["controller"] === "Sport") {
+                require_once("views/sport/sportsDashboard.php");
+            } else if ($_GET["controller"] === "Member") {
+                // echo "sports = ";
+                // print_r($sports);
+                return $sports;
+            }
+        }
     }
     public function deleteSports($request)
     {

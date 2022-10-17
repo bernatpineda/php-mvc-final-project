@@ -2,35 +2,19 @@
 
 class MemberController {
 
-    // public $model; // declarada como propiedad para redefinirla a acceder a ella en los métodos.
-    // public $view;
-
-    // public function __construct(){
-    //     //esta funcion se llamara por el action del query:
-    //     $action = $_GET["action"];
-    //     $this -> $action();        
-    // }
-
     use Controller;
     
-    // public function __construct(){
-    //     require_once("models/MemberModel.php");
-    //     $this->model = new MemberModel();
-
-    //     $this->view = new View();
-
-    //     //esta funcion se llamara por el action del query:
-    //     $action = $_GET["action"];
-    //     $this -> $action($_REQUEST); // he añadido el parámetro $_REQUEST, que es un array de los Query Params.      
-    // }
-    
-    public function getAllMembers(){
+    public function getAllMembers() {
         // require_once("models/MemberModel.php"); // AHORA EN EL CONSTRUCT
         // $model = new MemberModel(); // AHORA EN EL CONSTRUCT
-        $gymUser = $this->model -> get_users();
+        $members = $this->model->get();
         
         //me traigo la view/member/membersDashboard, se lee aki
-        require_once("views/member/membersDashboard.php");
+        #require_once("views/member/membersDashboard.php");
+
+        if (isset($members)) {
+            require_once("views/member/membersDashboard.php");
+        }
     }
     
     function getMember($request) {
@@ -40,13 +24,17 @@ class MemberController {
             print_r($request);
             echo " ) | ";
 
-        $member = null; // ! WHY?
+        $member = null; // ! WHY NULL?
         if (isset($request["id"])) {
             $member = $this->model->getById($request["id"]);
         }
 
+
+        // $sports = $this->model->getAllSports();
+
         $this->view->action = $request["action"]; // = getMember
         $this->view->data = $member;
+        // $this->view->sports = $sports;
         $this->view->render("member/member");
     }
 
@@ -82,8 +70,7 @@ class MemberController {
         }
     }
 
-    function createMember($request)
-    {
+    function createMember($request) {
         if (sizeof($_POST) > 0) {
             $member = $this->model->create($_POST);
 
