@@ -5,30 +5,39 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
+
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    
+    <link rel="stylesheet" href="assets/css/login.css">
 </head>
 <body>
 
-    <main class="form-signin w-100 m-auto">
-        <form id="login-form" method="POST" action="index.php?controller=Login&action=validLogin">      
+    <main class="login shadow p-3 mb-5 bg-body">
+        <form class="needs-validation" id="login-form" method="POST" action="index.php?controller=Login&action=validLogin">      
                 <!-- <img class="mb-4" src="./assets/brand/working-vector.ico" alt="" width="72" height="57" /> -->
 
-            <h1 class="h3 mb-3 fw-normal">Please login</h1>
-            <?php
-                    // include("config/baseConstants.php");
-                    // include("validate.php");
-            ?>
+            <h1 class="text-center">Hello!</h1>
 
-            <div class="form-floating">
-                <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" name="user-email" required />
-                <label for="floatingInput">Email address</label>
+            <div class="form-group was-validated">
+                <label class="form-label" for="email">Email address</label>
+                <input class="form-control" type="email" id="email" name="user-email" required />
+                <div class="invalid-feedback">
+                    Please enter your email adress
+                </div>
             </div>
 
-            <div class="form-floating">
-                <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="user-password" required />
-                <label for="floatingPassword">Password</label>
+            <div class="form-group was-validated">
+                <label class="form-label" for="password">Password</label>
+                <input class="form-control" type="password" id="password" name="user-password" required />
+                <div class="invalid-feedback">
+                    Please enter your password
+                </div>
             </div>
 
-            <input class="w-100 btn btn-lg btn-primary" type="submit" value="Login" name="login" />
+            <input class="btn btn-success w-100" type="submit" value="Login" name="login" />
 
             <?php
                 if (isset($_GET["error"])) {
@@ -48,25 +57,10 @@
                 } 
             ?>
 
-            <p class="mt-5 mb-3 text-muted">&copy; 2022</p>
+            <p class="mt-5 mb-3 text-muted">&copy; 2022 Hamilton Sports Center, Inc</p>
         </form>
     </main>
 
-    <!-- <h4>Login</h4>
-
-    <form action="ini.php" method="post">
-        <div class="form-floating">
-            <input type="email" id="email-input" placeholder="name@example.com" name="user-email" required />
-            <label for="email-input"></label>
-        </div>
-
-        <div class="form-floating">
-            <input type="password" id="password-input" placeholder="Password" name="user-password" required />
-            <label for="password-input"></label>
-        </div>
-
-        <input class="w-100 btn btn-lg btn-primary" type="submit" value="Login" name="login" />
-    </form> -->
 </body>
 </html>
 
