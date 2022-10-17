@@ -111,6 +111,5 @@ class MemberModel {
             return [false, $e];
         }
     }
-}
-
     
+}

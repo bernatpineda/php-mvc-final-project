@@ -16,7 +16,7 @@ class MemberController {
             require_once("views/member/membersDashboard.php");
         }
     }
-
+    
     function getMember($request) {
         // este método se usa en update para seleccionar el Member que hemos clicado según el id (el método se ejecuta en Query Param al clicar el link edit)
         //echos
@@ -30,7 +30,7 @@ class MemberController {
         }
 
 
-        // $sports = $this->model->getAllSport();
+        // $sports = $this->model->getAllSports();
 
         $this->view->action = $request["action"]; // = getMember
         $this->view->data = $member;
@@ -85,20 +85,15 @@ class MemberController {
         }
     }
 
-    function deleteMember($request) {
-        echo " deleteMember( ";
-        echo "<pre>";
-        print_r($request);
-        echo "</pre>";
-        echo " ) | ";
-
+    public function deleteMember($request)
+    {
         $action = $request["action"];
-        echo $action;
         $member = null;
-
         if (isset($request["id"])) {
             $member = $this->model->delete($request["id"]);
             header("Location: index.php?controller=Member&action=getAllMembers");
         }
+
     }
+    
 }

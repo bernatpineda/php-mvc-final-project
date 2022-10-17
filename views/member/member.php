@@ -64,7 +64,7 @@
         <?php
             require_once CONTROLLERS . "SportController.php";  
             $sportController = new SportController();
-            $sports = $sportController->getAllSport();
+            $sports = $sportController->getAllSports();
             // echo '$sport = ';
             // echo "<pre>";
             // print_r($sports);
