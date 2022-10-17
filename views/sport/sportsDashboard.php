@@ -9,7 +9,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 </head>
 <body>
-    <h1>Sport Dashboard</h1>
+    <h1>Sports Dashboard</h1>
     <a href="?controller=Sport&action=createSport" class="btn btn-primary">Create</a>
     <a id="home" class="btn btn-dark" href="./">Back</a>
 
