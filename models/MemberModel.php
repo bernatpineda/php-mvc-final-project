@@ -35,7 +35,6 @@ class MemberModel{
         $query->bindParam(3, $member["email"]);
         $query->bindParam(4, $member["sport_id"]);
         
-   
 
         try {
             $query->execute();
@@ -103,7 +102,3 @@ class MemberModel{
     }
     
 }
-
-
-
-    
