@@ -27,7 +27,7 @@
             echo "<td>" . $sport["count(members.id)"] . "</td>";
             echo "<td>" . $sport["sport"] . "</td>";
             echo "<td><a href=?c=vehiculos&a=modificar&id=".$sport["id"]."'>Edit</a></td>";
-            echo "<td><a href='?controller=Sport&action=deleteSport&id=" . $sport["id"] . "'>Delete</a></td>";
+            echo "<td><a href='?controller=Sport&action=deleteSports&id=" . $sport["id"] . "'>Delete</a></td>";
             echo "</tr>";
         }
         ?>

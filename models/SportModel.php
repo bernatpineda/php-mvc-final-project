@@ -9,7 +9,7 @@ class SportModel {
 
     }
 
-    function get_sports(){
+    function getSports(){
         
         $query = $this->db->connect()->prepare("select count(members.id), sports.sport, sports.id from sports right join members on members.sport_id = sports.id group by members.sport_id;");
         try {
@@ -23,4 +23,16 @@ class SportModel {
         }
     }
 
+    function delete($id)
+    {
+        $query = $this->db->connect()->prepare("DELETE FROM sports WHERE id = ?");
+        $query->bindParam(1, $id);
+
+        try {
+            $query->execute();
+            return [true];
+        } catch (PDOException $e) {
+            return [false, $e];
+        }
+    }
 }
