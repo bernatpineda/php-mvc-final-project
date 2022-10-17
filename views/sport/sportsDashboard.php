@@ -39,9 +39,9 @@
         ?>
         </tbody>
     </table>
+    <?php require_once("views/footer/footer.php") ?>
 </body>
 </html>
 
-<?php
-// print_r($sports);
+
 ?>

@@ -1,0 +1,21 @@
+.img-header{
+    width: 350px;
+    margin-top: 50px;
+    margin-left: 150px;
+}
+li{
+float: left;
+list-style:none;
+padding: 10px;
+
+
+}
+
+nav{
+    float: center;
+    margin-top: 60px;
+}
+
+a{
+    text-decoration: none;
+}

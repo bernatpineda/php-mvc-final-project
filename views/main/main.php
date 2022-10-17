@@ -13,6 +13,7 @@
 </head>
 
 <body>
+<?php require_once("views/header/header.php") ?>
     <div class="mt-5 d-grid gap-2 d-md-flex justify-content-md-end">
         <a class="btn btn-outline-success me-md-4" href="?controller=Login&action=closeSession">Logout</a>
     </div>
@@ -42,6 +43,7 @@
 
         </div>
     </div>
+    <?php require_once("views/footer/footer.php") ?>
 </body>
 
 </html>
