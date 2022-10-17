@@ -74,25 +74,10 @@
             </select>
         </div>
 
-
-
         <button type="submit" class="btn btn-primary">Submit</button>
-        <a id="return" class="btn btn-secondary" href="<?php echo "?controller=Member&action=getAllMembers&action=getAllMembers"; ?>">Return</a>
+        <a id="return" class="btn btn-secondary" href="<?php echo "?controller=Member&action=getAllMembers"; ?>">Return</a>
 
     </form>
 </body>
 </html>
 
-<?php 
-        // foreach($members as $member){
-        //     echo "<tr>";
-        //     echo "<td>" . $member["id"] . "</td>";
-        //     echo "<td>" . $member["name"] . "</td>";
-        //     echo "<td>" . $member["last_name"] . "</td>";
-        //     echo "<td>" . $member["email"] . "</td>";
-        //     echo "<td>" . $member["sport"] . "</td>";
-        //     echo "<td><a class='btn btn-secondary' href='?controller=Member&action=getMember&id=" . $member["id"] . "'>Edit</a></td>";
-        //     echo "<td><a class='btn btn-danger' href='?controller=Member&action=deleteMember&id=" . $member["id"] . "'>Delete</a></td>";
-        //     echo "</tr>";
-        // }
-        ?>

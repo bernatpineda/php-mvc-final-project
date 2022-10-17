@@ -1,15 +1,6 @@
 <?php
 
-class MemberModel {
-    
-    private $db;
-
-    public function __construct() {
-        $this -> db = new Database();
-
-        //esta variable la hace el usercontroller(prueba):
-        //$members = $this -> get();
-    }
+class MemberModel extends Model {
 
     function get() {
         // $query = $this->db->connect()->prepare("SELECT id, name, last_name, email FROM members");

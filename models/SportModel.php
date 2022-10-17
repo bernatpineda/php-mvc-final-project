@@ -1,27 +1,6 @@
 <?php
 
-class SportModel {
-    
-    private $db;
-
-    public function __construct(){
-        $this -> db = new Database();
-    }
-
-    // function get_sports(){
-        
-    //     $query = $this->db->connect()->prepare("SELECT id, sport FROM sports;
-    //     ");//falta
-    //     try {
-    //         $query->execute(); // lanza la petición del prepare a la base de datos
-    //         $sports = $query->fetchAll();
-
-    //         return $sports;
-
-    //     } catch (PDOException $e) {
-    //         return [];
-    //     }
-    // }
+class SportModel extends Model {
         
     function get() {
         
@@ -35,16 +14,6 @@ class SportModel {
             GROUP BY s.id, s.sport;"
         );
 
-        // $query = $this->db->connect()->prepare(
-        //     "SELECT s.id, s.sport, COUNT(s.id) as enrrolled_members 
-        //     FROM members m
-        //     RIGHT JOIN sports s
-        //     ON s.id = m.sport_id
-        //     GROUP BY s.id, s.sport;"
-        // );
-        
-        
-        // $query = $this->db->connect()->prepare("SELECT id, sport FROM sports");
         try {
             $query->execute();
             $sports = $query->fetchAll();  

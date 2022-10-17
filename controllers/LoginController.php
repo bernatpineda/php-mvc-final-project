@@ -54,12 +54,4 @@ class LoginController {
         header("Location: index.php");
     }
 
-    // function validSession() {
-    //     if (isset($_SESSION["email"])) {
-    //         return true;
-    //     } else {
-    //         return false;
-    //     }
-    // }
-
 }
