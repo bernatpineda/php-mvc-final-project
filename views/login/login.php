@@ -17,7 +17,7 @@
 
     <main class="login shadow p-3 mb-5 bg-body">
         <form class="needs-validation" id="login-form" method="POST" action="index.php?controller=Login&action=validLogin">      
-                <!-- <img class="mb-4" src="./assets/brand/working-vector.ico" alt="" width="72" height="57" /> -->
+            <img class="mb-4" src="./assets/img/logotr.png" alt="" />
 
             <h1 class="text-center">Hello!</h1>
 

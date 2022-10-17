@@ -16,11 +16,17 @@ body {
 }
 
 .login {
-    width: 360px;
+    width: 400px;
     height: min-content;
     padding: 20px;
     border-radius: 12px;
     background: #ffffff;
+}
+
+.login form img {
+    height: 100px;
+    display: flex;
+    margin: auto;
 }
 
 .login h1 {
