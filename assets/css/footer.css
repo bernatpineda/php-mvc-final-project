@@ -95,3 +95,14 @@ footer{
     text-align: center;
 }
 
+
+.menu-item:hover{
+    opacity: 1;
+}
+
+.copyright{
+    color: #f2f2f2;
+    opacity: 0.3;
+    text-align: center;
+}
+
