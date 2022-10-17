@@ -14,7 +14,7 @@
         echo "<h1>New sport</h1>";
     }
     
-    if ($this->action == "getSport" && (!isset($this->data) || !$this->data || sizeof($this->data) == 0)) {
+    if ($this -> action == "getSport" && (!isset($this->data) || !$this->data || sizeof($this->data) == 0)) {
         echo "<p>The sport does not exists!</p>";
     } else if (isset($error)) {
         echo "<p>$error</p>";
@@ -60,7 +60,7 @@
         </div> -->
 
         <button type="submit" class="btn btn-primary">Submit</button>
-        <a id="return" class="btn btn-secondary" href="<?php echo "?controller=Sport&action=getAllSport&action=getAllSport"; ?>">Return</a>
+        <a id="return" class="btn btn-secondary" href="<?php echo "?controller=Sport&action=getAllSports&action=getAllSports"; ?>">Return</a>
 
     </form>
 </body>

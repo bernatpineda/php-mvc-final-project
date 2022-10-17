@@ -8,12 +8,13 @@ class SportModel {
         $this -> db = new Database();
     }
 
-    function getSport(){
+    function getSports(){
         
-        $query = $this->db->connect()->prepare("select count(members.id), sports.sport, sports.id from sports right join members on members.sport_id = sports.id group by members.sport_id;");
+        //$query = $this->db->connect()->prepare("SELECT count(members.id), sports.sport, sports.id FROM sports right join members on members.sport_id = sports.id group by members.sport_id;");
+        $query = $this->db->connect()->prepare("SELECT id, sport FROM sports");
         try {
             $query->execute();
-            $sports = $query->fetchAll();
+            $sports = $query->fetchAll();  
 
             return $sports;
 

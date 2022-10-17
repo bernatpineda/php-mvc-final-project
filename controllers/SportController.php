@@ -6,12 +6,12 @@ class SportController{
 
 
     
-    public function getAllSport(){
+    public function getAllSports(){
 
        //require_once("models/SportModel.php");
 
        // $model = new SportModel();
-        $gymSport = $this -> model -> getSport();
+        $gymSport = $this -> model -> getSports();
         
         require_once("views/sport/sportsDashboard.php");
     }
@@ -48,7 +48,7 @@ class SportController{
             
             if ($sport[0]) {
                 echo $sport[0];
-                header("Location: index.php?controller=Sport&action=getAllSport");
+                header("Location: index.php?controller=Sport&action=getAllSports");
             } else {
                 echo "Incorrect data";
                 
@@ -68,7 +68,7 @@ class SportController{
             $sport = $this-> model -> create($_POST);
 
             if ($sport[0]) {
-                header("Location: index.php?controller=Sport&action=getAllSport");
+                header("Location: index.php?controller=Sport&action=getAllSports");
             } else {
                 echo $sport[1];
             }
@@ -84,7 +84,7 @@ class SportController{
         $sport = null;
         if (isset($request["id"])) {
             $sport = $this->model->delete($request["id"]);
-            header("Location: index.php?controller=Sport&action=getAllSport");
+            header("Location: index.php?controller=Sport&action=getAllSports");
         }
 
     }

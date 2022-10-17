@@ -16,7 +16,7 @@
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Enrolled members</th>
+                <!-- <th>Enrolled members</th> -->
                 <th>Sports</th>
                 <th colspan='2'>Actions</th>
                 
@@ -26,7 +26,7 @@
         <?php foreach($gymSport as $sport){
             echo "<tr>";
             echo "<td>" . $sport["id"] . "</td>";
-            echo "<td>" . $sport["count(members.id)"] . "</td>";
+            //echo "<td>" . $sport["count(members.id)"] . "</td>";
             echo "<td>" . $sport["sport"] . "</td>";
             echo "<td><a class='btn btn-secondary' href='?controller=Sport&action=getSport&id=" . $sport["id"] ."'>Edit</a></td>";
             echo "<td><a class='btn btn-danger' href='?controller=Sport&action=deleteSport&id=" . $sport["id"] . "'>Delete</a></td>";
