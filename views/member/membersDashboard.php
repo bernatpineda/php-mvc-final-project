@@ -7,6 +7,8 @@
     <title>Members Dashboard</title>
 </head>
 <body>
+    <?php #require_once("assets/html/header.html") ?>
+
     <h1>Members Dashboard</h1>
     <a href="?controller=Member&action=createMember">Create</a>
     <a id="home" class="btn btn-secondary" href="./">Back</a>
@@ -39,5 +41,7 @@
         ?>
         </tbody>
     </table>
+
+    <?php #require_once("assets/html/footer.html") ?>
 </body>
 </html>

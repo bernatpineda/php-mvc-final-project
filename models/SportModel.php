@@ -23,10 +23,28 @@ class SportModel {
     //     }
     // }
         
-    function get(){
+    function get() {
         
         //$query = $this->db->connect()->prepare("SELECT count(members.id), sports.sport, sports.id FROM sports right join members on members.sport_id = sports.id group by members.sport_id;");
-        $query = $this->db->connect()->prepare("SELECT id, sport FROM sports");
+        
+        $query = $this->db->connect()->prepare(
+            "SELECT s.id, s.sport, COUNT(m.id) as enrrolled_members 
+            FROM sports s
+            LEFT JOIN members m
+            ON s.id = m.sport_id
+            GROUP BY s.id, s.sport;"
+        );
+
+        // $query = $this->db->connect()->prepare(
+        //     "SELECT s.id, s.sport, COUNT(s.id) as enrrolled_members 
+        //     FROM members m
+        //     RIGHT JOIN sports s
+        //     ON s.id = m.sport_id
+        //     GROUP BY s.id, s.sport;"
+        // );
+        
+        
+        // $query = $this->db->connect()->prepare("SELECT id, sport FROM sports");
         try {
             $query->execute();
             $sports = $query->fetchAll();  
@@ -38,8 +56,7 @@ class SportModel {
         }
     }
 
-    function create($sport)
-    {
+    function create($sport) {
         $query = $this->db->connect()->prepare("INSERT INTO sports (sport)
         VALUES
         (?);");
@@ -75,7 +92,7 @@ class SportModel {
         }
     }
 
-    function update($sport){
+    function update($sport) {
         //echos
             echo " update( ";
             print_r($sport);
