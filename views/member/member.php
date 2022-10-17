@@ -19,6 +19,15 @@
     } else if (isset($error)) {
         echo "<p>$error</p>";
     }
+
+    // para hacer el select de sport
+    require_once CONTROLLERS . "SportController.php";  
+    $sportController = new SportController();
+    $sports = $sportController->getAllSports();
+    // echo '$sport = ';
+    // echo "<pre>";
+    // print_r($sports);
+    // echo "</pre>";
     ?>
 
     <form action="index.php?controller=Member&action=<?php echo isset($this->data[0]['id']) ? "updateMember" : "createMember" ?>" method="post">
@@ -47,29 +56,7 @@
             <input required type="text" value="<?php echo isset($this->data[0]['email']) ? $this->data[0]['email'] : null ?>" 
                 class="form-control" id="email" name="email" aria-describedby="lastnameHelp" placeholder="Email"
             >
-        </div>
-
-        <!-- <div class="form-group">
-            <label for="sport">Sport</label>
-            <select name="sport_id" class="form-control" id="sport" required>
-                <option value="">Please Select</option>
-                <option value="1" <?php echo isset($this->data['sport']) && $this->data['sport'] == 1 ? 'selected' : null; ?> >Pilates</option>
-                <option value="2" <?php echo isset($this->data['sport']) && $this->data['sport'] == 2 ? 'selected' : null; ?> >Powerlifting</option>
-                <option value="3" <?php echo isset($this->data['sport']) && $this->data['sport'] == 3 ? 'selected' : null; ?> >Padel</option>
-            </select>
-        </div> -->
-
-        <!-- dinamic -->    
-
-        <?php
-            require_once CONTROLLERS . "SportController.php";  
-            $sportController = new SportController();
-            $sports = $sportController->getAllSports();
-            // echo '$sport = ';
-            // echo "<pre>";
-            // print_r($sports);
-            // echo "</pre>";
-        ?>
+        </div>  
 
         <div class="form-group">
             <label for="sport">Sport Din</label>
