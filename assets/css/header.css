@@ -1,8 +1,4 @@
-.img-header{
-    width: 350px;
-    margin-top: 50px;
-    margin-left: 150px;
-}
+
 li{
 float: left;
 list-style:none;
@@ -13,7 +9,12 @@ padding: 10px;
 
 nav{
     float: center;
-    margin-top: 60px;
+    margin-top: 0;
+    background-image: url("../img/multi-sport.jpeg");
+    background-repeat: none;
+    background-size: cover;
+    background-position: center;
+    height: 100%;
 }
 
 a{

@@ -10,7 +10,7 @@
 <body>
     <header>
         <img src="" alt="">
-        <nav>
+        <nav class="nav-header">
             <ul>
                 <li><a href="">Home</a></li>
                 <li><a href="">About us</a></li>

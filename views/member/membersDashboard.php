@@ -20,7 +20,7 @@
         <thead class="table-dark">
             <tr>
                 <th>Id</th>
-                <th>Name users</th>
+                <th>Name user</th>
                 <th>Last name</th>
                 <th>Email</th>
                 <th>Sport</th>
