@@ -9,7 +9,7 @@
 </head>
 <body>
     <footer>
-        <img class="logo" src="logo.webp" alt="NO SE VE">
+        <img class="logo" src="./assets/img/logotr.png" alt="NO SE VE">
         <div class="social-icons-container">
         <a href="" class="social-icon"></a>
             <a href="" class="social-icon"></a>
