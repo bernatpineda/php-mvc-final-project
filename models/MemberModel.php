@@ -35,7 +35,6 @@ class MemberModel{
         $query->bindParam(3, $member["email"]);
         $query->bindParam(4, $member["sport_id"]);
         
-   
 
         try {
             $query->execute();
@@ -90,9 +89,7 @@ class MemberModel{
         }
     }
 
-    //function delete
-    function delete($id)
-    {
+    function delete($id) {
         $query = $this->db->connect()->prepare("DELETE FROM members WHERE id = ?");
         $query->bindParam(1, $id);
 
@@ -105,8 +102,3 @@ class MemberModel{
     }
     
 }
-    //function update
-
-
-
-    
