@@ -27,17 +27,11 @@
             echo "<tr>";
             echo "<td>" . $sport["id"] . "</td>";
             echo "<td>" . $sport["sport"] . "</td>";
-<<<<<<< HEAD
-<<<<<<< HEAD
-            echo "<td><a href=?c=vehiculos&a=modificar&id=".$sport["id"]."'>Edit</a></td>";
-            echo "<td><a href='?controller=Sport&action=deleteSports&id=" . $sport["id"] . "'>Delete</a></td>";
-=======
-=======
+
             echo "<td>" . $sport["enrrolled_members"] . "</td>";
->>>>>>> develop
             echo "<td><a class='btn btn-secondary' href='?controller=Sport&action=getSport&id=" . $sport["id"] ."'>Edit</a></td>";
             echo "<td><a class='btn btn-danger' href='?controller=Sport&action=deleteSport&id=" . $sport["id"] . "'>Delete</a></td>";
->>>>>>> develop
+
             echo "</tr>";
         }
         ?>
