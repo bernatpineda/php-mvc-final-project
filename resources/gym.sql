@@ -27,6 +27,11 @@ SET time_zone = "+00:00";
 -- Estructura de tabla para la tabla `members`
 --
 
+-- Database creation
+DROP DATABASE IF EXISTS gym;
+CREATE DATABASE IF NOT EXISTS gym;
+USE gym;
+
 CREATE TABLE `members` (
   `id` int(11) NOT NULL,
   `name` varchar(25) NOT NULL,
