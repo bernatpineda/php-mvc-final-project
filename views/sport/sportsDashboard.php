@@ -17,7 +17,7 @@
 <body>
     <?php require_once("assets/html/header.html") ?>
 
-    <div class="container">
+    <div class="container dashboard">
         <a id="home" class="btn btn-outline-secondary" href="./"><i class="bi bi-arrow-90deg-left"></i></a>
         <div class="d-flex justify-content-center">
             <h1>Sport Dashboard</h1>
@@ -39,8 +39,10 @@
                 echo "<td>" . $sport["id"] . "</td>";
                 echo "<td>" . $sport["sport"] . "</td>";
                 echo "<td>" . $sport["enrrolled_members"] . "</td>";
-                echo "<td><a class='btn btn-outline-warning' href='?controller=Sport&action=getSport&id=" . $sport["id"] ."'><i class='bi bi-pencil-fill'></i></a></td>";
-                echo "<td><a class='btn btn-outline-danger' href='?controller=Sport&action=deleteSport&id=" . $sport["id"] . "'><i class='bi bi-trash3-fill'></i></a></td>";
+                echo "<td colspan='2' class='tg-0lax'>
+                <a class='btn btn-outline-warning' href='?controller=Sport&action=getSport&id=" . $sport["id"] ."'><i class='bi bi-pencil-fill'></i></a>
+                <a class='btn btn-outline-danger' href='?controller=Sport&action=deleteSport&id=" . $sport["id"] . "'><i class='bi bi-trash3-fill'></i></a>
+                </td>";
                 echo "</tr>";
             }
             ?>

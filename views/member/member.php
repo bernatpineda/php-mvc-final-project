@@ -39,7 +39,7 @@
     // echo "</pre>";
     ?>
 
-    <div class="container">
+    <div class="container container-form">
         <main class="form">
             <form action="index.php?controller=Member&action=<?php echo isset($this->data[0]['id']) ? "updateMember" : "createMember" ?>" method="post">
                 

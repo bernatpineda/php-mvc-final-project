@@ -29,7 +29,7 @@
         echo "<p>$error</p>";
     }
     ?>
-    <div class="container">
+    <div class="container container-form">
         <main class="form">
             <form action="index.php?controller=Sport&action=<?php echo isset($this->data[0]['id']) ? "updateSport" : "createSport" ?>" method="post">
                 

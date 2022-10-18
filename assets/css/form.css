@@ -4,8 +4,13 @@
     box-sizing: border-box;
 }
 
-.container {
+.dashboard {
     height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+
+.container-form {
     display: flex;
     justify-content: center;
 }
