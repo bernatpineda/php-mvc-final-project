@@ -9,7 +9,8 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-image: url("../img/img1.jpg");
+    background-color: black;
+    background-image: url("../img/login_bg.png");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
@@ -21,6 +22,12 @@ body {
     padding: 20px;
     border-radius: 12px;
     background: #ffffff;
+}
+
+.login img {
+    height: 80px;
+    display: flex;
+    margin: auto;
 }
 
 .login h1 {

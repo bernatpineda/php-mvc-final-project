@@ -17,7 +17,7 @@
 
     <main class="login">
         <form class="needs-validation" id="login-form" method="POST" action="index.php?controller=Login&action=validLogin">      
-                <!-- <img class="mb-4" src="./assets/brand/working-vector.ico" alt="" width="72" height="57" /> -->
+            <img class="mb-4" src="./assets/img/logotr.png" alt="Hamilton Sports Center's Logo" />
 
             <h1 class="text-center">Hello!</h1>
 
