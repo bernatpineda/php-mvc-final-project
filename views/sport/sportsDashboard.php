@@ -47,7 +47,7 @@
             </tbody>
         </table>
 
-        <div class="d-flex justify-content-center">
+        <div class="d-flex justify-content-center p-3">
             <a href="?controller=Sport&action=createSport" class="btn btn-outline-primary btn-lg w-40">
                 <i class="bi bi-plus-circle-fill"></i> NEW
             </a>
