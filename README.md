@@ -3,13 +3,10 @@ we create a PHP project with user login and CRUD operations implementing
 MVC, OOP and MySQL.
 
 Index
-- Getting Started
-    Prerequisites
-    Installing
+- Prerequisites
+- Installing
 - Built With
 - Authors
-
-Getting Started
 
 
 Prerequisites
@@ -25,7 +22,8 @@ You need too a basedata.
 
 Built With
 Visual Studio Code - Used for the Code php, html and css.
-PhpMyAdminUsed - Used to make the database
+PhpMyAdmin - Used to make the database
+MySQL - Used to make the database
 
 Authors
 Pau Civill, Tony Martin, Bernat Pineda and Elisabet Ramos.
