@@ -41,19 +41,11 @@ class MemberController {
     function updateMember($request) { 
         // este método se ejecuta según el action Query Param (cuando está seteado el id al enviar el form de member.php)
         //echos
-<<<<<<< HEAD
             //echo " updateMember( ";
            // echo "<pre>";
             //print_r($request);
             //echo "</pre>";
             //echo " ) | ";
-=======
-            // echo " updateMember( ";
-            // echo "<pre>";
-            // print_r($request);
-            // echo "</pre>";
-            // echo " ) | ";
->>>>>>> 2e4b98101904b6bc6549d0a545d486d4ca1a7231
 
         if (count($_POST) > 0) {
             //print_r($_POST);
