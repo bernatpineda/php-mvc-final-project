@@ -12,11 +12,7 @@ class LoginModel extends Model {
 
     function get($emailInput) { 
         // returns the array with the DB data
-<<<<<<< HEAD
-        //echo " get( $emailInput ) | ";
-=======
         // echo " get( $emailInput ) | ";
->>>>>>> 2e4b98101904b6bc6549d0a545d486d4ca1a7231
 
         $query = $this->db->connect()->prepare(
             "SELECT name, email, password 
