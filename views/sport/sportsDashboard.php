@@ -47,16 +47,14 @@
             </tbody>
         </table>
 
-<<<<<<< HEAD
         <div class="d-flex justify-content-center">
             <a href="?controller=Sport&action=createSport" class="btn btn-outline-primary btn-lg w-40">
                 <i class="bi bi-plus-circle-fill"></i> NEW
             </a>
         </div>
     </div>
-=======
     <br /><br />
-    <table class="table table-hover" border="1" width="80%">
+    <!-- <table class="table table-hover" border="1" width="80%">
         <thead class="table-dark">
             <tr>
                 <th>#</th>
@@ -78,9 +76,8 @@
         }
         ?>
         </tbody>
-    </table>
+    </table> -->
     <?php require_once("assets/html/footer.html") ?>
->>>>>>> elinuevo
 </body>
 </html>
 
