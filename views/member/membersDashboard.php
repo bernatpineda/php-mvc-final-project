@@ -56,6 +56,10 @@
         </div>
     </div>
 
+<<<<<<< HEAD
+=======
+    <?php require_once("assets/html/footer.html") ?>
+>>>>>>> elinuevo
 </body>
 </html>
 

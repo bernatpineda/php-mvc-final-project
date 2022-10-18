@@ -91,7 +91,7 @@
             </form>
         </main>
     </div>
-
+    <?php require_once("assets/html/footer.html") ?>
 </body>
 </html>
 

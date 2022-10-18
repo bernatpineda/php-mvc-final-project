@@ -62,10 +62,17 @@ class SportModel extends Model {
     }
 
     function update($sport) {
+<<<<<<< HEAD
         
             //echo " update( ";
             //print_r($sport);
             //echo " ) | ";
+=======
+        //echos
+            // echo " update( ";
+            // print_r($sport);
+            // echo " ) | ";
+>>>>>>> elinuevo
 
         $query = $this->db->connect()->prepare(
             "UPDATE sports
