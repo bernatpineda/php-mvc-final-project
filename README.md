@@ -1,4 +1,4 @@
-MVC final project
+## MVC final project
 we create a PHP project with user login and CRUD operations implementing
 MVC, OOP and MySQL.
 
@@ -80,3 +80,29 @@ Acknowledgments
 Hat tip to anyone whose code is used
 Inspiration
 etc
+
+
+## Requirements
+
+- You need to have a database with all the members and sports in your MySQL workspace. We provide you with all the queries to create the database inside the **resources** folder.
+- Set your database configuration on the **config/db.php** file. (username, password, dbname, etc).
+
+## Technologies used
+
+\* Visual Studio Code - Developement IDE
+
+\* HTML - Markup Language
+
+\* CSS - Style Sheet Language
+
+\* Javascript - Programming Language
+
+\* Bootstrap - Front-end Library
+
+\* JQuery - JS library
+
+\* JS-Grid - JS library
+
+\* PHP - Scripting language
+
+\* XAMPP - Open source cross-platform web server
