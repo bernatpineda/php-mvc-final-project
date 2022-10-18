@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome</title>
+<<<<<<< HEAD
     <link href="../../assets/css/style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
@@ -32,3 +33,20 @@
 </body>
 
 </html>
+=======
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+</head>
+
+<body>
+    <?php require_once("assets/html/header.html") ?>
+
+    <a href="?controller=Login&action=closeSession">Logout</a>
+    <h1>Welcome to Hamilton Sports Center</h1>
+    <div class="list-group">
+        <a class="list-group-item list-group-item-action" href="?controller=Member&action=getAllMembers">Member Controller</a>
+        <a class="list-group-item list-group-item-action" href="?controller=Sport&action=getAllSports">Sports Controller</a>
+    </div>
+</body>
+
+</html>
+>>>>>>> ffde4ab1f43f32dd73ff0be106dcdd04c5ae1367
