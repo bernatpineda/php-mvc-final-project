@@ -45,46 +45,7 @@
             
         </div>
     </div>
-
-
-
-<div id="carouselExampleSlidesOnly" class="carousel slide carousel-options" data-bs-ride="carousel">
-  <div class="carousel-inner d-flex" >
-
-    <div class="carousel-item active">
-      <img src="./assets/img/carousel/image.jpeg" class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="./assets/img/carousel/baseball.webp" class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="./assets/img/carousel/climb.jpeg" class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="./assets/img/carousel/gymnastic.webp" class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="./assets/img/carousel/muscle.jpg" class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="./assets/img/carousel/push-up.jpg" class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="./assets/img/carousel/rugby.jpeg" class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="./assets/img/carousel/soccer.jpeg" class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="./assets/img/carousel/tennis.webp" class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item">
-      <img src="./assets/img/carousel/yoga.png" class="d-block w-100" alt="...">
-    </div>
-  </div>
-</div>
-
-
+    <?php require_once("assets/html/carousel.html") ?>
     <?php require_once("assets/html/footer.html") ?>
 </body>
 </html>
