@@ -27,7 +27,7 @@
         <div class="row gx-5">
 
             <div class="col">
-                <h2 class="list-group p-3 border bg-warning bg-opacity-25 fs-5">
+                <h2 class="list-group p-3 border bg-primary bg-opacity-10 fs-5">
                     <a class="list-group-item list-group-item-action" href="?controller=Member&action=getAllMembers">
                         <i class="bi bi-people-fill"></i> Members
                     </a>
@@ -35,9 +35,9 @@
             </div>
 
             <div class="col">
-                <h2 class="list-group p-3 border bg-success bg-opacity-25 fs-5">
+                <h2 class="list-group p-3 border bg-primary bg-opacity-10 fs-5">
                     <a class="list-group-item list-group-item-action" href="?controller=Sport&action=getAllSports">
-                        <i class="bi bi-universal-access"></i> Sports
+                    <i class="bi bi-trophy-fill"></i> Sports
                     </a>
                 </h2>
             </div>
