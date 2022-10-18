@@ -18,23 +18,32 @@
     <table class="table table-hover" border="1" width="80%">
         <thead class="table-dark">
             <tr>
-                <th>Id</th>
+                <th>#</th>
                 <th>Sports</th>
                 <th>Enrolled members</th>
                 <th colspan='2'>Actions</th>
-                
             </tr>
         </thead>
         <tbody>
+<<<<<<< HEAD
         <?php foreach($sports as $sport) {
+=======
+        <?php 
+        foreach($sports as $sport){
+>>>>>>> pau
             echo "<tr>";
             echo "<td>" . $sport["id"] . "</td>";
             echo "<td>" . $sport["sport"] . "</td>";
 
             echo "<td>" . $sport["enrrolled_members"] . "</td>";
+<<<<<<< HEAD
             echo "<td><a class='btn btn-secondary' href='?controller=Sport&action=getSport&id=" . $sport["id"] ."'>Edit</a></td>";
             echo "<td><a class='btn btn-danger' href='?controller=Sport&action=deleteSport&id=" . $sport["id"] . "'>Delete</a></td>";
 
+=======
+            echo "<td><a class='btn btn-outline-warning' href='?controller=Sport&action=getSport&id=" . $sport["id"] ."'><i class='bi bi-pencil-fill'></i></a></td>";
+            echo "<td><a class='btn btn-outline-danger' href='?controller=Sport&action=deleteSport&id=" . $sport["id"] . "'><i class='bi bi-trash3-fill'></i></a></td>";
+>>>>>>> pau
             echo "</tr>";
         }
         ?>

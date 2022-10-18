@@ -36,8 +36,8 @@
             echo "<td>" . $member["last_name"] . "</td>";
             echo "<td>" . $member["email"] . "</td>";
             echo "<td>" . $member["sport"] . "</td>";
-            echo "<td><a class='btn btn-secondary' href='?controller=Member&action=getMember&id=" . $member["id"] . "'>Edit</a></td>";
-            echo "<td><a class='btn btn-danger' href='?controller=Member&action=deleteMember&id=" . $member["id"] . "'>Delete</a></td>";
+            echo "<td><a class='btn btn-outline-warning' href='?controller=Member&action=getMember&id=" . $member["id"] . "'><i class='bi bi-pencil-fill'></i></a></td>";
+            echo "<td><a class='btn btn-outline-danger' href='?controller=Member&action=deleteMember&id=" . $member["id"] . "'><i class='bi bi-trash3-fill'></i></a></td>";
             echo "</tr>";
         }
         ?>
