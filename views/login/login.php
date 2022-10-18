@@ -19,7 +19,7 @@
         <form class="needs-validation" id="login-form" method="POST" action="index.php?controller=Login&action=validLogin">      
             <img class="mb-4" src="./assets/img/logotr.png" alt="Hamilton Sports Center's Logo" />
 
-            <h1 class="text-center">Hello!</h1>
+            <h1 class="text-center">Hamilton SC</h1>
 
             <div class="form-group was-validated">
                 <label class="form-label" for="email">Email address</label>
