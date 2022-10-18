@@ -14,8 +14,6 @@ Index
 - Contributing
 - Versioning
 - Authors
-- License
-- Acknowledgments  
 
 
 
@@ -38,8 +36,9 @@ and PHP.
 
 Installing
 Firsty you must implement a login page. User sessions must be managed by PHP
-
-
+Follow model diagram, config, controller and views.
+example....
+You need too a basedata.
 
 
 
@@ -73,10 +72,4 @@ Authors
 Billie Thompson - Provided README Template - PurpleBooth
 See also the list of contributors who participated in this project.
 
-License
-This project is licensed under the CC0 1.0 Universal Creative Commons License - see the LICENSE.md file for details
 
-Acknowledgments
-Hat tip to anyone whose code is used
-Inspiration
-etc
