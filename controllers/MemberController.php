@@ -20,11 +20,11 @@ class MemberController {
     function getMember($request) {
         // este método se usa en update para seleccionar el Member que hemos clicado según el id (el método se ejecuta en Query Param al clicar el link edit)
         //echos
-            echo " getMember( ";
-            print_r($request);
-            echo " ) | ";
+            // echo " getMember( ";
+            // print_r($request);
+            // echo " ) | ";
 
-        $member = null; // ! WHY NULL?
+        $member = null;
         if (isset($request["id"])) {
             $member = $this->model->getById($request["id"]);
         }
@@ -41,11 +41,19 @@ class MemberController {
     function updateMember($request) { 
         // este método se ejecuta según el action Query Param (cuando está seteado el id al enviar el form de member.php)
         //echos
+<<<<<<< HEAD
             //echo " updateMember( ";
            // echo "<pre>";
             //print_r($request);
             //echo "</pre>";
             //echo " ) | ";
+=======
+            // echo " updateMember( ";
+            // echo "<pre>";
+            // print_r($request);
+            // echo "</pre>";
+            // echo " ) | ";
+>>>>>>> 2e4b98101904b6bc6549d0a545d486d4ca1a7231
 
         if (count($_POST) > 0) {
             //print_r($_POST);
@@ -55,10 +63,10 @@ class MemberController {
             // $member recibe un true o false del return del método update de MemberModal.php
 
             if ($member[0]) { // si update return true
-                echo $member[0];
+                // echo $member[0];
                 header("Location: index.php?controller=Member&action=getAllMembers");
             } else {
-                echo "Incorrect data";
+                // echo "Incorrect data";
                 // estas propiedades se utilizan para validar el update en membersDashboard.php
                 $this->action = $request["action"];
                 $this->error = "The data entered is incorrect, check that there is no other employee with that email.";

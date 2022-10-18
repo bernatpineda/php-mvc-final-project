@@ -21,9 +21,9 @@ class SportController {
 
     function getSport($request) {
 
-            echo " getSport( ";
-            print_r($request);
-            echo " ) | ";
+            // echo " getSport( ";
+            // print_r($request);
+            // echo " ) | ";
 
         $sport = null;
         if (isset($request["id"])) {
@@ -37,15 +37,15 @@ class SportController {
 
     function updateSport($request) { 
 
-            echo " updateSport( ";
-            echo "<pre>";
-            print_r($request);
-            echo "</pre>";
-            echo " ) | ";
+            // echo " updateSport( ";
+            // echo "<pre>";
+            // print_r($request);
+            // echo "</pre>";
+            // echo " ) | ";
 
         if (count($_POST) > 0) {
             print_r($_POST);
-            echo " | ";
+            // echo " | ";
 
             $sport = $this -> model -> update($_POST);
             
@@ -53,7 +53,7 @@ class SportController {
                 echo $sport[0];
                 header("Location: index.php?controller=Sport&action=getAllSports");
             } else {
-                echo "Incorrect data";
+                // echo "Incorrect data";
                 
                 $this->action = $request["action"];
                 $this->error = "The data entered is incorrect, check that there is no other employee with that email.";
