@@ -15,41 +15,47 @@
 </head>
 <body>
     <?php require_once("assets/html/header.html") ?>
-        
-    <h1>Members Dashboard</h1>
-    <a href="?controller=Member&action=createMember" class="btn btn-primary">Create</a>
-    <a id="home" class="btn btn-secondary" href="./">Back</a>
+    
+    <div class="container">
+        <a id="home" class="btn btn-outline-secondary" href="./"><i class="bi bi-arrow-90deg-left"></i></a>
+        <div class="d-flex justify-content-center">
+            <h1>Members Dashboard</h1>
+        </div>
 
-    <br /><br />
-    <table class="table table-hover" border="1" width="80%">
-        <thead class="table-dark">
-            <tr>
-                <th>#</th>
-                <th>Name users</th>
-                <th>Last name</th>
-                <th>Email</th>
-                <th>Sport</th>
-                <th colspan='2'>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        <?php 
-        foreach($members as $member) {
-            echo "<tr>";
-            echo "<td>" . $member["id"] . "</td>";
-            echo "<td>" . $member["name"] . "</td>";
-            echo "<td>" . $member["last_name"] . "</td>";
-            echo "<td>" . $member["email"] . "</td>";
-            echo "<td>" . $member["sport"] . "</td>";
-            echo "<td><a class='btn btn-outline-warning' href='?controller=Member&action=getMember&id=" . $member["id"] . "'><i class='bi bi-pencil-fill'></i></a></td>";
-            echo "<td><a class='btn btn-outline-danger' href='?controller=Member&action=deleteMember&id=" . $member["id"] . "'><i class='bi bi-trash3-fill'></i></a></td>";
-            echo "</tr>";
-        }
-        ?>
-        </tbody>
-    </table>
+        <table class="table table-hover" border="1" width="80%">
+            <thead class="table-dark">
+                <tr>
+                    <th>#</th>
+                    <th>Name users</th>
+                    <th>Last name</th>
+                    <th>Email</th>
+                    <th>Sport</th>
+                    <th colspan='2'>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            <?php 
+            foreach($members as $member) {
+                echo "<tr>";
+                echo "<td>" . $member["id"] . "</td>";
+                echo "<td>" . $member["name"] . "</td>";
+                echo "<td>" . $member["last_name"] . "</td>";
+                echo "<td>" . $member["email"] . "</td>";
+                echo "<td>" . $member["sport"] . "</td>";
+                echo "<td><a class='btn btn-outline-warning' href='?controller=Member&action=getMember&id=" . $member["id"] . "'><i class='bi bi-pencil-fill'></i></a></td>";
+                echo "<td><a class='btn btn-outline-danger' href='?controller=Member&action=deleteMember&id=" . $member["id"] . "'><i class='bi bi-trash3-fill'></i></a></td>";
+                echo "</tr>";
+            }
+            ?>
+            </tbody>
+        </table>
+        <div class="d-flex justify-content-center">
+            <a href="?controller=Member&action=createMember" class="btn btn-outline-primary btn-lg w-40">
+                <i class="bi bi-plus-circle-fill"></i> NEW
+            </a>
+        </div>
+    </div>
 
-    <?php #require_once("assets/html/footer.html") ?>
 </body>
 </html>
 

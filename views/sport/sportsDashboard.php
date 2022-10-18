@@ -17,34 +17,42 @@
 <body>
     <?php require_once("assets/html/header.html") ?>
 
-    <h1>Sport Dashboard</h1>
-    <a href="?controller=Sport&action=createSport" class="btn btn-primary">Create</a>
-    <a id="home" class="btn btn-secondary" href="./">Back</a>
+    <div class="container">
+        <a id="home" class="btn btn-outline-secondary" href="./"><i class="bi bi-arrow-90deg-left"></i></a>
+        <div class="d-flex justify-content-center">
+            <h1>Sport Dashboard</h1>
+        </div>
+        
+        <table class="table table-hover" border="1" width="80%">
+            <thead class="table-dark">
+                <tr>
+                    <th>#</th>
+                    <th>Sports</th>
+                    <th>Enrolled members</th>
+                    <th colspan='2'>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            <?php 
+            foreach($sports as $sport){
+                echo "<tr>";
+                echo "<td>" . $sport["id"] . "</td>";
+                echo "<td>" . $sport["sport"] . "</td>";
+                echo "<td>" . $sport["enrrolled_members"] . "</td>";
+                echo "<td><a class='btn btn-outline-warning' href='?controller=Sport&action=getSport&id=" . $sport["id"] ."'><i class='bi bi-pencil-fill'></i></a></td>";
+                echo "<td><a class='btn btn-outline-danger' href='?controller=Sport&action=deleteSport&id=" . $sport["id"] . "'><i class='bi bi-trash3-fill'></i></a></td>";
+                echo "</tr>";
+            }
+            ?>
+            </tbody>
+        </table>
 
-    <br /><br />
-    <table class="table table-hover" border="1" width="80%">
-        <thead class="table-dark">
-            <tr>
-                <th>#</th>
-                <th>Sports</th>
-                <th>Enrolled members</th>
-                <th colspan='2'>Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-        <?php 
-        foreach($sports as $sport){
-            echo "<tr>";
-            echo "<td>" . $sport["id"] . "</td>";
-            echo "<td>" . $sport["sport"] . "</td>";
-            echo "<td>" . $sport["enrrolled_members"] . "</td>";
-            echo "<td><a class='btn btn-outline-warning' href='?controller=Sport&action=getSport&id=" . $sport["id"] ."'><i class='bi bi-pencil-fill'></i></a></td>";
-            echo "<td><a class='btn btn-outline-danger' href='?controller=Sport&action=deleteSport&id=" . $sport["id"] . "'><i class='bi bi-trash3-fill'></i></a></td>";
-            echo "</tr>";
-        }
-        ?>
-        </tbody>
-    </table>
+        <div class="d-flex justify-content-center">
+            <a href="?controller=Sport&action=createSport" class="btn btn-outline-primary btn-lg w-40">
+                <i class="bi bi-plus-circle-fill"></i> NEW
+            </a>
+        </div>
+    </div>
 </body>
 </html>
 
