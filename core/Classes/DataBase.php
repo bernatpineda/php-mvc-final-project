@@ -12,7 +12,7 @@ class Database
     
     public function __construct()
     {
-        echo "Database __construct() | ";
+        // echo "Database __construct() | ";
 
         $this->host = HOST;
         $this->db = DB;
@@ -23,7 +23,7 @@ class Database
 
     function connect()  //se ejecuta en el member o sport model
     {
-        echo "Database connect() | ";
+        // echo "Database connect() | ";
 
         try {
             $connection = "mysql:host=" . HOST . ";"

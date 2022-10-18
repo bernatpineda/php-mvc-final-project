@@ -29,22 +29,23 @@
         echo "<p>$error</p>";
     }
     ?>
+    <div class="container">
+        <main class="form">
+            <form action="index.php?controller=Sport&action=<?php echo isset($this->data[0]['id']) ? "updateSport" : "createSport" ?>" method="post">
+                
+                <input type="hidden" name="id" value="<?php echo isset($this->data[0]['id']) ? $this->data[0]['id'] : null ?>">
+                <?php //echo "input hidden: ".$this->data[0]['id']; ?>
 
-    <main class="form">
-        <form action="index.php?controller=Sport&action=<?php echo isset($this->data[0]['id']) ? "updateSport" : "createSport" ?>" method="post">
-            
-            <input type="hidden" name="id" value="<?php echo isset($this->data[0]['id']) ? $this->data[0]['id'] : null ?>">
-            <?php //echo "input hidden: ".$this->data[0]['id']; ?>
+                <div class="form-group">
+                    <label for="sport">Sport</label>
+                    <input required type="text" value="<?php echo isset($this->data[0]['sport']) ? $this->data[0]['sport'] : null ?>" class="form-control" id="sport" name="sport" aria-describedby="sport" placeholder="Sport">
+                </div>
 
-            <div class="form-group">
-                <label for="sport">Sport</label>
-                <input required type="text" value="<?php echo isset($this->data[0]['sport']) ? $this->data[0]['sport'] : null ?>" class="form-control" id="sport" name="sport" aria-describedby="sport" placeholder="Sport">
-            </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <a id="return" class="btn btn-secondary" href="<?php echo "?controller=Sport&action=getAllSports"; ?>">Return</a>
 
-            <button type="submit" class="btn btn-primary">Submit</button>
-            <a id="return" class="btn btn-secondary" href="<?php echo "?controller=Sport&action=getAllSports"; ?>">Return</a>
-
-        </form>
-    </main>
+            </form>
+        </main>
+    </div>
 </body>
 </html>

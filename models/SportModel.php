@@ -43,7 +43,7 @@ class SportModel extends Model {
 
     function getById($id) {
     
-        echo " getById( $id ) | ";
+        // echo " getById( $id ) | ";
 
         $query = $this->db->connect()->prepare(
             "SELECT id, sport 
@@ -63,9 +63,9 @@ class SportModel extends Model {
 
     function update($sport) {
         //echos
-            echo " update( ";
-            print_r($sport);
-            echo " ) | ";
+            // echo " update( ";
+            // print_r($sport);
+            // echo " ) | ";
 
         $query = $this->db->connect()->prepare(
             "UPDATE sports
