@@ -83,7 +83,7 @@
     </div>
   </div>
 </div>
-</body>
+
 
     <?php require_once("assets/html/footer.html") ?>
 </body>
