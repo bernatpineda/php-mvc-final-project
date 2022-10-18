@@ -37,8 +37,6 @@
                 </div>
             </div>
 
-            <input class="btn btn-success w-100" type="submit" value="Login" name="login" />
-
             <?php
                 if (isset($_GET["error"])) {
                     if ($_GET["error"] == "1") {
@@ -56,6 +54,8 @@
                     }
                 } 
             ?>
+
+            <input class="btn btn-success w-100" type="submit" value="Login" name="login" />
 
             <p class="mt-5 mb-3 text-muted">&copy; 2022 Hamilton Sports Center, Inc</p>
         </form>

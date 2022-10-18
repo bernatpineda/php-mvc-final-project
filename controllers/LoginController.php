@@ -36,14 +36,16 @@ class LoginController {
                 //print_r($_SESSION);
             } else {
                 $errorMsg = "Incorrect password";
-                $this->view->render("login/login"); 
+                header("Location: index.php?error=2");
+                // $this->view->render("login/login"); 
                 // require_once VIEWS . "login/login.php?error=2";
                 //echo " $errorMsg | ";
             }
 
         } else {
             $errorMsg = "Email not registered";
-            $this->view->render("login/login");
+            header("Location: index.php?error=1");
+            // $this->view->render("login/login");
             // require_once VIEWS . "login/login.php?error=1";
             //echo " $errorMsg | ";
         }
