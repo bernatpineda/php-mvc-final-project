@@ -13,13 +13,13 @@
     <!-- icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
 </head>
-<body>
+<body">
     <?php require_once("assets/html/header.html") ?>
     
     <div class="container dashboard">
         <a id="home" class="btn btn-outline-secondary" href="./"><i class="bi bi-arrow-90deg-left"></i></a>
         <div class="d-flex justify-content-center">
-            <h1>Members Dashboard</h1>
+            <h1 class="mb-3">Members Dashboard</h1>
         </div>
 
         <table class="table table-hover" border="1" width="80%">

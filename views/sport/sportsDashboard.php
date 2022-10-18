@@ -20,7 +20,7 @@
     <div class="container dashboard">
         <a id="home" class="btn btn-outline-secondary" href="./"><i class="bi bi-arrow-90deg-left"></i></a>
         <div class="d-flex justify-content-center">
-            <h1>Sport Dashboard</h1>
+            <h1 class="mb-3">Sport Dashboard</h1>
         </div>
         
         <table class="table table-hover" border="1" width="80%">
