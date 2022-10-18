@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 11-10-2022 a las 14:04:48
+-- Tiempo de generación: 18-10-2022 a las 17:06:13
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.6
 
@@ -41,11 +41,11 @@ CREATE TABLE `members` (
 --
 
 INSERT INTO `members` (`id`, `name`, `last_name`, `email`, `password`, `sport_id`) VALUES
-(1, 'Rafael', 'Nadal', 'rafanadal@gmail.com', '$2y$10$lB2wM5MYLiSZ9wWMF.3M9OKGh4djSer7Y/PQUa.ECvyPMx8BLVtES', 3),
-(2, 'Fernando ', 'Alonso', 'falonso@gmail.com', '$2y$10$Yy/UueX.RDDzCH7aHheUDejGqdP16URdvkVIs/EY5ftPnAk.lQl7q', 2),
-(3, 'Arnold', 'Schwarzenegger', 'chuache@gmail.com', '$2y$10$NBZA7uer4zmj36k9e7IrYekfApQh387jEvNr6Y9W78h2FpLzyzre6', 1),
-(4, 'Muhammad', 'Ali', 'ali@gmail.com', '$2y$10$xg.TgxU.eEShR1grXbn6IO0he.Hy5aWwIQzrfF0IyMkYZ9U31woQG', 2),
-(5, 'Carolina', 'Marín', 'cmarin@gmail.com', '$2y$10$JgLjTjoch/Ha15ZZKeCVGOiglc6z79V79wZwSH74PbiwnirniN5e2', 3);
+(1, 'Pau', 'Rubio', 'pau@gmail.com', '$2y$10$lB2wM5MYLiSZ9wWMF.3M9OKGh4djSer7Y/PQUa.ECvyPMx8BLVtES', 3),
+(2, 'Elisabet', 'Flores', 'eli@gmail.com', '$2y$10$Yy/UueX.RDDzCH7aHheUDejGqdP16URdvkVIs/EY5ftPnAk.lQl7q', 2),
+(3, 'Tony', 'Abrines', 'tony@gmail.com', '$2y$10$NBZA7uer4zmj36k9e7IrYekfApQh387jEvNr6Y9W78h2FpLzyzre6', 1),
+(4, 'Bernat', 'Molina', 'mbernat@gmail.com', '$2y$10$xg.TgxU.eEShR1grXbn6IO0he.Hy5aWwIQzrfF0IyMkYZ9U31woQG', 2),
+(5, 'Juan Carlos', 'Mendoza', 'juanca@gmail.com', '', 4);
 
 -- --------------------------------------------------------
 
@@ -65,7 +65,9 @@ CREATE TABLE `sports` (
 INSERT INTO `sports` (`id`, `sport`) VALUES
 (1, 'Pilates'),
 (2, 'Powerlifiting'),
-(3, 'Padel');
+(3, 'Padel'),
+(4, 'Ping Pong'),
+(5, 'Calisthenics');
 
 --
 -- Índices para tablas volcadas
@@ -92,13 +94,13 @@ ALTER TABLE `sports`
 -- AUTO_INCREMENT de la tabla `members`
 --
 ALTER TABLE `members`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `sports`
 --
 ALTER TABLE `sports`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- Restricciones para tablas volcadas
