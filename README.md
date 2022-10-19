@@ -1,4 +1,4 @@
-## MVC final project
+## Final PHP Project
 This PHP project has been created with user login and CRUD operations implementing MVC, OOP and MySQL.
 
 
