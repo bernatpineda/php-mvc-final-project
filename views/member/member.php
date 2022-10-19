@@ -29,14 +29,10 @@
         echo "<p>$error</p>";
     }
 
-    // para hacer el select de sport
     require_once CONTROLLERS . "SportController.php";  
     $sportController = new SportController();
     $sports = $sportController->getAllSports();
-    // echo '$sport = ';
-    // echo "<pre>";
-    // print_r($sports);
-    // echo "</pre>";
+
     ?>
 
     <div class="container container-form">
@@ -44,7 +40,6 @@
             <form action="index.php?controller=Member&action=<?php echo isset($this->data[0]['id']) ? "updateMember" : "createMember" ?>" method="post">
                 
                 <input type="hidden" name="id" value="<?php echo isset($this->data[0]['id']) ? $this->data[0]['id'] : null ?>">
-                <?php //echo "input hidden: ".$this->data[0]['id']; ?>
 
                 <div class="form-group">
                     <label for="name">Name</label>

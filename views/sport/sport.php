@@ -35,7 +35,6 @@
             <form action="index.php?controller=Sport&action=<?php echo isset($this->data[0]['id']) ? "updateSport" : "createSport" ?>" method="post">
                 
                 <input type="hidden" name="id" value="<?php echo isset($this->data[0]['id']) ? $this->data[0]['id'] : null ?>">
-                <?php //echo "input hidden: ".$this->data[0]['id']; ?>
 
                 <div class="form-group">
                     <label for="sport">Sport</label>

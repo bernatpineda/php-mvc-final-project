@@ -3,7 +3,6 @@
 class MemberModel extends Model {
 
     function get() {
-        // $query = $this->db->connect()->prepare("SELECT id, name, last_name, email FROM members");
 
         $query = $this->db->connect()->prepare(
             "SELECT m.id, m.name, m.last_name, m.email, s.sport 
@@ -13,9 +12,8 @@ class MemberModel extends Model {
         );
 
         try {
-            $query->execute(); // lanza la petición del prepare a la base de datos
+            $query->execute();
             $members = $query->fetchAll();
-            //print_r($members);
             return $members;
 
         } catch (PDOException $e) {
@@ -24,8 +22,6 @@ class MemberModel extends Model {
     }
 
     function getById($id) {
-        // returns the array with the DB data of the selected member
-        // echo " getById( $id ) | ";
 
         $query = $this->db->connect()->prepare(
             "SELECT m.id, m.name, m.last_name, m.email, s.id as sport_id, s.sport 
@@ -46,10 +42,6 @@ class MemberModel extends Model {
     }
 
     function update($member){
-        //echos
-            // echo " update( ";
-            // print_r($member);
-            // echo " ) | ";
 
         $query = $this->db->connect()->prepare(
             "UPDATE members

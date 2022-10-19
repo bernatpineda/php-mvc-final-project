@@ -63,33 +63,3 @@
 
 </body>
 </html>
-
-
-<!--  tony -->
-
-
-
-<?php
-
-// echo "<pre>";
-// print_r($this->data);
-// echo "</pre>";
-
-// foreach ($this->data as $index => $loginData) {
-//     echo "loginData = ";
-//     echo "<pre>";
-//     print_r($loginData);
-//     echo "</pre>";
-
-//     $pwdInput = "r123";
-//     $pwdHashedInDb = $loginData["password"];
-//     $pwdVerify = password_verify($pwdInput, $pwdHashedInDb);
-
-    // if ($loginData["email"] === "rafanadal@gmail.com" && $loginData["password"] === $pwdInput) {
-    //     if ($pwdVerify) {
-    //         echo "GO TO MAIN";
-    //     }
-    // } else {
-    //     echo "GO TO LOGIN AGAIN";
-    // }
-// }

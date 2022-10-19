@@ -12,18 +12,13 @@ class SportController {
             if ($_GET["controller"] === "Sport") {
                 require_once("views/sport/sportsDashboard.php");
             } else if ($_GET["controller"] === "Member") {
-                // echo "sports = ";
-                // print_r($sports);
+
                 return $sports;
             }
         }
     }
 
     function getSport($request) {
-
-            // echo " getSport( ";
-            // print_r($request);
-            // echo " ) | ";
 
         $sport = null;
         if (isset($request["id"])) {
@@ -37,15 +32,8 @@ class SportController {
 
     function updateSport($request) { 
 
-            // echo " updateSport( ";
-            // echo "<pre>";
-            // print_r($request);
-            // echo "</pre>";
-            // echo " ) | ";
 
         if (count($_POST) > 0) {
-            print_r($_POST);
-            // echo " | ";
 
             $sport = $this -> model -> update($_POST);
             

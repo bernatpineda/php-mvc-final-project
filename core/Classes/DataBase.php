@@ -1,6 +1,5 @@
 <?php
 
-// Create connection
 class Database
 {
     private $host;
@@ -10,9 +9,7 @@ class Database
     private $charset;
     private $error;
     
-    public function __construct()
-    {
-        // echo "Database __construct() | ";
+    public function __construct() {
 
         $this->host = HOST;
         $this->db = DB;
@@ -21,9 +18,7 @@ class Database
         $this->charset = CHARSET;
     }
 
-    function connect()  //se ejecuta en el member o sport model
-    {
-        // echo "Database connect() | ";
+    function connect() {
 
         try {
             $connection = "mysql:host=" . HOST . ";"
